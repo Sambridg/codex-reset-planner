@@ -1,0 +1,6 @@
+outputs/
+node_modules/
+work/probe-codex-account.mjs
+*.log
+.DS_Store
+Thumbs.db
