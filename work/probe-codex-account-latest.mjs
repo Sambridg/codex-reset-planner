@@ -1,11 +1,30 @@
-import { spawn } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { spawn, spawnSync } from "node:child_process";
 import { createInterface } from "node:readline";
 
-const npxCommand = `${process.env.APPDATA}\\npm\\npx.cmd`;
-const child = spawn(npxCommand, ["--yes", "@openai/codex@0.145.0", "app-server", "--stdio"], {
+function resolveCodexLaunch() {
+  if (process.env.CODEX_EXECUTABLE) {
+    return { command: process.env.CODEX_EXECUTABLE, prefixArgs: [], shell: /\.(?:cmd|bat)$/i.test(process.env.CODEX_EXECUTABLE) };
+  }
+  const installedScript = path.join(process.env.APPDATA || "", "npm", "node_modules", "@openai", "codex", "bin", "codex.js");
+  if (fs.existsSync(installedScript)) {
+    return { command: process.execPath, prefixArgs: [installedScript], shell: false };
+  }
+  return { command: process.platform === "win32" ? "codex.cmd" : "codex", prefixArgs: [], shell: process.platform === "win32" };
+}
+
+const launch = resolveCodexLaunch();
+const versionProbe = spawnSync(launch.command, [...launch.prefixArgs, "--version"], {
+  windowsHide: true,
+  shell: launch.shell,
+  encoding: "utf8",
+});
+const codexVersion = String(versionProbe.stdout || "").trim() || null;
+const child = spawn(launch.command, [...launch.prefixArgs, "app-server", "--stdio"], {
   cwd: process.cwd(),
   windowsHide: true,
-  shell: true,
+  shell: launch.shell,
   stdio: ["pipe", "pipe", "pipe"]
 });
 
@@ -78,7 +97,7 @@ function complete() {
   child.stdin.end();
   child.kill();
   process.stdout.write(`${JSON.stringify({
-    codexVersion: "0.145.0",
+    codexVersion,
     account: results.account ?? null,
     rateLimits: results.rateLimits ?? null,
     usage: results.usage ?? null,

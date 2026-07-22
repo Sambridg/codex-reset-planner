@@ -2,6 +2,8 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import readline from "node:readline";
+import { quotaLaneKey, sharedObservationModels } from "./lib/reset-evidence.mjs";
+import { zonedDate, zonedHour, zonedIso } from "./lib/time.mjs";
 
 const HOME = process.env.USERPROFILE || os.homedir();
 const WORKSPACE = process.env.RESET_PLANNER_WORKSPACE || process.cwd();
@@ -10,7 +12,7 @@ const RANGE_START_MS = Date.parse("2026-05-21T12:00:00Z");
 const RANGE_END_MS = Date.parse("2026-07-22T12:00:00Z");
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 const HOUR_MS = 60 * 60 * 1000;
-const NZ_OFFSET_MS = 12 * HOUR_MS;
+const NZ_TIMEZONE = "Pacific/Auckland";
 const CURRENT_THREAD_ID = process.env.CURRENT_THREAD_ID || "";
 
 function envNumber(name, fallback) {
@@ -75,15 +77,15 @@ const SESSION_ROOTS = [
 ];
 
 function nzIso(ms) {
-  return new Date(ms + NZ_OFFSET_MS).toISOString().replace("Z", "+12:00");
+  return zonedIso(ms, NZ_TIMEZONE);
 }
 
 function nzDate(ms) {
-  return new Date(ms + NZ_OFFSET_MS).toISOString().slice(0, 10);
+  return zonedDate(ms, NZ_TIMEZONE);
 }
 
 function nzHour(ms) {
-  return `${new Date(ms + NZ_OFFSET_MS).toISOString().slice(0, 13)}:00:00+12:00`;
+  return zonedHour(ms, NZ_TIMEZONE);
 }
 
 function utcDate(ms) {
@@ -502,7 +504,7 @@ function buildScheduleClaims(snapshots) {
 function buildQuotaClaims(claims) {
   const lanes = new Map();
   for (const claim of claims) {
-    const laneKey = [claim.logicalLane, claim.limitId, claim.planType].join("|");
+    const laneKey = quotaLaneKey(claim);
     if (!lanes.has(laneKey)) lanes.set(laneKey, []);
     lanes.get(laneKey).push(claim);
   }
@@ -598,7 +600,7 @@ function buildInferredEvents(claims, conversations, billingAnchors) {
     for (let index = 1; index < laneClaims.length; index += 1) {
       const previous = laneClaims[index - 1];
       const current = laneClaims[index];
-      const sharedModels = previous.sourceModels.filter((model) => current.sourceModels.includes(model) && model !== "unknown");
+      const sharedModels = sharedObservationModels(previous, current);
       if (!sharedModels.length) {
         ignoredModelOnlyHandoffs.push({
           laneKey,

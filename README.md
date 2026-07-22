@@ -37,6 +37,16 @@ The forensic build is machine-specific. It scans local Codex rollout files under
 npm run build:planner
 ```
 
+Run the dependency-free regression suite with:
+
+```powershell
+npm test
+```
+
+The tests cover Pacific/Auckland daylight-saving transitions, quota-lane identity, model-only handoff rejection, and public-data sanitization.
+
+The account probe uses the locally installed Codex CLI. Set `CODEX_EXECUTABLE` only when an alternate installation should be used; the probe never downloads a package automatically.
+
 ## Privacy boundary
 
 The published dataset contains aggregate counts and confidence-ranked signals. Raw conversation excerpts, session identifiers, local file paths, authentication data, and API credentials are excluded. The local `outputs/` directory is ignored by Git.

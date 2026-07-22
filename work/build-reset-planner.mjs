@@ -1,22 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { sanitizePublicData } from "./lib/public-data.mjs";
 
 const root = process.cwd();
 const dataPath = path.join(root, "outputs", "openai-reset-forensics-data.json");
 const outputPath = path.join(root, "outputs", "openai-reset-planner.html");
-const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
-if (Array.isArray(data.conversationClues)) {
-  data.conversationEvidenceSummary = { total: data.conversationClues.length, imported: 0, retrospective: 0, byStance: {} };
-  delete data.conversationClues;
-}
-data.events = (data.events || []).map((event) => {
-  const copy = { ...event };
-  delete copy.nearbyConversations;
-  if (Array.isArray(copy.nearbyConversationSignals)) {
-    copy.nearbyConversationSignals = copy.nearbyConversationSignals.map(({ timestamp, stance, evidenceWeight, imported, retrospective }) => ({ timestamp, stance, evidenceWeight, imported, retrospective }));
-  }
-  return copy;
-});
+const data = sanitizePublicData(JSON.parse(fs.readFileSync(dataPath, "utf8")));
 const liveUsed = Number(process.env.CURRENT_USED_PERCENT);
 if (Number.isFinite(liveUsed)) data.account.main.usedPercent = liveUsed;
 data.account.refreshedAt = new Date().toISOString();

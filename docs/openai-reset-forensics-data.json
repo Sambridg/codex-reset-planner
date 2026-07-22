@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-23T07:00:21.576+12:00",
+  "generatedAt": "2026-07-23T07:23:35+12:00",
   "timezone": "Pacific/Auckland",
   "account": {
-    "capturedAt": "2026-07-23T07:00:06.8842914+12:00",
+    "capturedAt": "2026-07-23T07:22:41.1520482+12:00",
     "accountType": "chatgpt",
     "planType": "pro",
     "lifetimeTokens": 19811078874,
@@ -14,43 +14,43 @@
       "usedPercent": 71,
       "windowMinutes": 10080,
       "resetsAt": 1785273563,
-      "windowStart": "2026-07-22T09:19:23.000+12:00",
-      "resetsAtIso": "2026-07-29T09:19:23.000+12:00"
+      "windowStart": "2026-07-22T09:19:23+12:00",
+      "resetsAtIso": "2026-07-29T09:19:23+12:00"
     },
     "spark": {
       "limitId": "codex_bengalfox",
       "usedPercent": 2,
       "windowMinutes": 10080,
       "resetsAt": 1785274135,
-      "windowStart": "2026-07-22T09:28:55.000+12:00",
-      "resetsAtIso": "2026-07-29T09:28:55.000+12:00"
+      "windowStart": "2026-07-22T09:28:55+12:00",
+      "resetsAtIso": "2026-07-29T09:28:55+12:00"
     },
     "resetCredits": [
       {
         "grantedAt": 1782932589,
         "expiresAt": 1785524589,
         "status": "available",
-        "grantedAtIso": "2026-07-02T07:03:09.000+12:00",
-        "expiresAtIso": "2026-08-01T07:03:09.000+12:00"
+        "grantedAtIso": "2026-07-02T07:03:09+12:00",
+        "expiresAtIso": "2026-08-01T07:03:09+12:00"
       },
       {
         "grantedAt": 1783964040,
         "expiresAt": 1786556040,
         "status": "available",
-        "grantedAtIso": "2026-07-14T05:34:00.000+12:00",
-        "expiresAtIso": "2026-08-13T05:34:00.000+12:00"
+        "grantedAtIso": "2026-07-14T05:34:00+12:00",
+        "expiresAtIso": "2026-08-13T05:34:00+12:00"
       }
     ]
   },
   "source": {
     "files": 673,
-    "bytes": 3180667495,
+    "bytes": 3180859491,
     "tokenEvents": 130523,
     "turnContexts": 7097,
     "malformedLines": 0,
     "rateSnapshots": 171703,
-    "rangeStart": "2026-05-22T00:00:00.000+12:00",
-    "rangeEnd": "2026-07-23T00:00:00.000+12:00"
+    "rangeStart": "2026-05-22T00:00:00+12:00",
+    "rangeEnd": "2026-07-23T00:00:00+12:00"
   },
   "tokenComparison": {
     "officialTokens": 8511266401,
@@ -9866,13 +9866,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-05-20T08:43:13.000+12:00",
+      "startAt": "2026-05-20T08:43:13+12:00",
       "startAtMs": 1779223393000,
-      "resetAt": "2026-05-27T08:43:13.000+12:00",
+      "resetAt": "2026-05-27T08:43:13+12:00",
       "resetAtMs": 1779828193000,
-      "firstObservedAt": "2026-05-22T19:06:46.472+12:00",
+      "firstObservedAt": "2026-05-22T19:06:46+12:00",
       "firstObservedAtMs": 1779433606472,
-      "lastObservedAt": "2026-05-24T07:22:05.558+12:00",
+      "lastObservedAt": "2026-05-24T07:22:05+12:00",
       "lastObservedAtMs": 1779564125558,
       "maxUsedPercent": 19,
       "samples": 863,
@@ -9890,13 +9890,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-05-24T08:33:24.000+12:00",
+      "startAt": "2026-05-24T08:33:24+12:00",
       "startAtMs": 1779568404000,
-      "resetAt": "2026-05-31T08:33:24.000+12:00",
+      "resetAt": "2026-05-31T08:33:24+12:00",
       "resetAtMs": 1780173204000,
-      "firstObservedAt": "2026-05-24T08:33:08.356+12:00",
+      "firstObservedAt": "2026-05-24T08:33:08+12:00",
       "firstObservedAtMs": 1779568388356,
-      "lastObservedAt": "2026-05-31T07:58:37.331+12:00",
+      "lastObservedAt": "2026-05-31T07:58:37+12:00",
       "lastObservedAtMs": 1780171117331,
       "maxUsedPercent": 39,
       "samples": 2497,
@@ -9914,13 +9914,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-05-24T08:33:24.000+12:00",
+      "startAt": "2026-05-24T08:33:24+12:00",
       "startAtMs": 1779568404000,
-      "resetAt": "2026-05-31T08:33:24.000+12:00",
+      "resetAt": "2026-05-31T08:33:24+12:00",
       "resetAtMs": 1780173204000,
-      "firstObservedAt": "2026-05-25T08:14:19.307+12:00",
+      "firstObservedAt": "2026-05-25T08:14:19+12:00",
       "firstObservedAtMs": 1779653659307,
-      "lastObservedAt": "2026-05-25T08:14:35.375+12:00",
+      "lastObservedAt": "2026-05-25T08:14:35+12:00",
       "lastObservedAtMs": 1779653675375,
       "maxUsedPercent": 12,
       "samples": 4,
@@ -9938,13 +9938,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-05-31T10:34:39.000+12:00",
+      "startAt": "2026-05-31T10:34:39+12:00",
       "startAtMs": 1780180479000,
-      "resetAt": "2026-06-07T10:34:39.000+12:00",
+      "resetAt": "2026-06-07T10:34:39+12:00",
       "resetAtMs": 1780785279000,
-      "firstObservedAt": "2026-05-31T15:09:10.854+12:00",
+      "firstObservedAt": "2026-05-31T15:09:10+12:00",
       "firstObservedAtMs": 1780196950854,
-      "lastObservedAt": "2026-06-01T21:27:52.660+12:00",
+      "lastObservedAt": "2026-06-01T21:27:52+12:00",
       "lastObservedAtMs": 1780306072660,
       "maxUsedPercent": 7,
       "samples": 800,
@@ -9962,13 +9962,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-01T05:40:37.000+12:00",
+      "startAt": "2026-06-01T05:40:37+12:00",
       "startAtMs": 1780249237000,
-      "resetAt": "2026-06-08T05:40:37.000+12:00",
+      "resetAt": "2026-06-08T05:40:37+12:00",
       "resetAtMs": 1780854037000,
-      "firstObservedAt": "2026-06-01T05:46:35.605+12:00",
+      "firstObservedAt": "2026-06-01T05:46:35+12:00",
       "firstObservedAtMs": 1780249595605,
-      "lastObservedAt": "2026-06-04T10:49:37.406+12:00",
+      "lastObservedAt": "2026-06-04T10:49:37+12:00",
       "lastObservedAtMs": 1780526977406,
       "maxUsedPercent": 55,
       "samples": 5159,
@@ -9986,13 +9986,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-01T05:40:37.000+12:00",
+      "startAt": "2026-06-01T05:40:37+12:00",
       "startAtMs": 1780249237000,
-      "resetAt": "2026-06-08T05:40:37.000+12:00",
+      "resetAt": "2026-06-08T05:40:37+12:00",
       "resetAtMs": 1780854037000,
-      "firstObservedAt": "2026-06-02T06:09:16.773+12:00",
+      "firstObservedAt": "2026-06-02T06:09:16+12:00",
       "firstObservedAtMs": 1780337356773,
-      "lastObservedAt": "2026-06-04T06:37:44.279+12:00",
+      "lastObservedAt": "2026-06-04T06:37:44+12:00",
       "lastObservedAtMs": 1780511864279,
       "maxUsedPercent": 51,
       "samples": 405,
@@ -10010,13 +10010,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-04T13:54:56.000+12:00",
+      "startAt": "2026-06-04T13:54:56+12:00",
       "startAtMs": 1780538096000,
-      "resetAt": "2026-06-11T13:54:56.000+12:00",
+      "resetAt": "2026-06-11T13:54:56+12:00",
       "resetAtMs": 1781142896000,
-      "firstObservedAt": "2026-06-04T15:10:02.037+12:00",
+      "firstObservedAt": "2026-06-04T15:10:02+12:00",
       "firstObservedAtMs": 1780542602037,
-      "lastObservedAt": "2026-06-11T13:09:03.647+12:00",
+      "lastObservedAt": "2026-06-11T13:09:03+12:00",
       "lastObservedAtMs": 1781140143647,
       "maxUsedPercent": 87,
       "samples": 6687,
@@ -10034,13 +10034,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-11T13:55:16.000+12:00",
+      "startAt": "2026-06-11T13:55:16+12:00",
       "startAtMs": 1781142916000,
-      "resetAt": "2026-06-18T13:55:16.000+12:00",
+      "resetAt": "2026-06-18T13:55:16+12:00",
       "resetAtMs": 1781747716000,
-      "firstObservedAt": "2026-06-11T18:03:11.279+12:00",
+      "firstObservedAt": "2026-06-11T18:03:11+12:00",
       "firstObservedAtMs": 1781157791279,
-      "lastObservedAt": "2026-06-16T10:32:00.708+12:00",
+      "lastObservedAt": "2026-06-16T10:32:00+12:00",
       "lastObservedAtMs": 1781562720708,
       "maxUsedPercent": 48,
       "samples": 4018,
@@ -10058,13 +10058,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-16T10:32:02.000+12:00",
+      "startAt": "2026-06-16T10:32:02+12:00",
       "startAtMs": 1781562722000,
-      "resetAt": "2026-06-23T10:32:02.000+12:00",
+      "resetAt": "2026-06-23T10:32:02+12:00",
       "resetAtMs": 1782167522000,
-      "firstObservedAt": "2026-06-16T10:32:02.428+12:00",
+      "firstObservedAt": "2026-06-16T10:32:02+12:00",
       "firstObservedAtMs": 1781562722428,
-      "lastObservedAt": "2026-06-18T08:45:08.193+12:00",
+      "lastObservedAt": "2026-06-18T08:45:08+12:00",
       "lastObservedAtMs": 1781729108193,
       "maxUsedPercent": 15,
       "samples": 1786,
@@ -10082,13 +10082,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-16T10:32:02.000+12:00",
+      "startAt": "2026-06-16T10:32:02+12:00",
       "startAtMs": 1781562722000,
-      "resetAt": "2026-06-23T10:32:02.000+12:00",
+      "resetAt": "2026-06-23T10:32:02+12:00",
       "resetAtMs": 1782167522000,
-      "firstObservedAt": "2026-06-16T16:07:27.072+12:00",
+      "firstObservedAt": "2026-06-16T16:07:27+12:00",
       "firstObservedAtMs": 1781582847072,
-      "lastObservedAt": "2026-06-16T17:54:02.799+12:00",
+      "lastObservedAt": "2026-06-16T17:54:02+12:00",
       "lastObservedAtMs": 1781589242799,
       "maxUsedPercent": 4,
       "samples": 81,
@@ -10106,13 +10106,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-18T10:00:31.000+12:00",
+      "startAt": "2026-06-18T10:00:31+12:00",
       "startAtMs": 1781733631000,
-      "resetAt": "2026-06-25T10:00:31.000+12:00",
+      "resetAt": "2026-06-25T10:00:31+12:00",
       "resetAtMs": 1782338431000,
-      "firstObservedAt": "2026-06-18T13:00:56.658+12:00",
+      "firstObservedAt": "2026-06-18T13:00:56+12:00",
       "firstObservedAtMs": 1781744456658,
-      "lastObservedAt": "2026-06-24T10:15:38.217+12:00",
+      "lastObservedAt": "2026-06-24T10:15:38+12:00",
       "lastObservedAtMs": 1782252938217,
       "maxUsedPercent": 34,
       "samples": 6277,
@@ -10130,13 +10130,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-25T13:01:03.000+12:00",
+      "startAt": "2026-06-25T13:01:03+12:00",
       "startAtMs": 1782349263000,
-      "resetAt": "2026-07-02T13:01:03.000+12:00",
+      "resetAt": "2026-07-02T13:01:03+12:00",
       "resetAtMs": 1782954063000,
-      "firstObservedAt": "2026-06-25T15:44:59.645+12:00",
+      "firstObservedAt": "2026-06-25T15:44:59+12:00",
       "firstObservedAtMs": 1782359099645,
-      "lastObservedAt": "2026-06-29T10:36:43.177+12:00",
+      "lastObservedAt": "2026-06-29T10:36:43+12:00",
       "lastObservedAtMs": 1782686203177,
       "maxUsedPercent": 29,
       "samples": 2613,
@@ -10154,13 +10154,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-29T18:37:58.000+12:00",
+      "startAt": "2026-06-29T18:37:58+12:00",
       "startAtMs": 1782715078000,
-      "resetAt": "2026-07-06T18:37:58.000+12:00",
+      "resetAt": "2026-07-06T18:37:58+12:00",
       "resetAtMs": 1783319878000,
-      "firstObservedAt": "2026-06-29T19:17:33.700+12:00",
+      "firstObservedAt": "2026-06-29T19:17:33+12:00",
       "firstObservedAtMs": 1782717453700,
-      "lastObservedAt": "2026-06-30T11:38:10.648+12:00",
+      "lastObservedAt": "2026-06-30T11:38:10+12:00",
       "lastObservedAtMs": 1782776290648,
       "maxUsedPercent": 22,
       "samples": 1887,
@@ -10178,13 +10178,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-30T14:49:47.000+12:00",
+      "startAt": "2026-06-30T14:49:47+12:00",
       "startAtMs": 1782787787000,
-      "resetAt": "2026-07-07T14:49:47.000+12:00",
+      "resetAt": "2026-07-07T14:49:47+12:00",
       "resetAtMs": 1783392587000,
-      "firstObservedAt": "2026-06-30T21:31:37.501+12:00",
+      "firstObservedAt": "2026-06-30T21:31:37+12:00",
       "firstObservedAtMs": 1782811897501,
-      "lastObservedAt": "2026-07-07T14:01:22.690+12:00",
+      "lastObservedAt": "2026-07-07T14:01:22+12:00",
       "lastObservedAtMs": 1783389682690,
       "maxUsedPercent": 32,
       "samples": 11359,
@@ -10202,13 +10202,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-06-30T14:49:47.000+12:00",
+      "startAt": "2026-06-30T14:49:47+12:00",
       "startAtMs": 1782787787000,
-      "resetAt": "2026-07-07T14:49:47.000+12:00",
+      "resetAt": "2026-07-07T14:49:47+12:00",
       "resetAtMs": 1783392587000,
-      "firstObservedAt": "2026-07-02T08:18:56.013+12:00",
+      "firstObservedAt": "2026-07-02T08:18:56+12:00",
       "firstObservedAtMs": 1782937136013,
-      "lastObservedAt": "2026-07-02T15:22:17.381+12:00",
+      "lastObservedAt": "2026-07-02T15:22:17+12:00",
       "lastObservedAtMs": 1782962537381,
       "maxUsedPercent": 9,
       "samples": 47,
@@ -10226,13 +10226,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-07T17:02:06.000+12:00",
+      "startAt": "2026-07-07T17:02:06+12:00",
       "startAtMs": 1783400526000,
-      "resetAt": "2026-07-14T17:02:06.000+12:00",
+      "resetAt": "2026-07-14T17:02:06+12:00",
       "resetAtMs": 1784005326000,
-      "firstObservedAt": "2026-07-07T17:21:27.585+12:00",
+      "firstObservedAt": "2026-07-07T17:21:27+12:00",
       "firstObservedAtMs": 1783401687585,
-      "lastObservedAt": "2026-07-14T03:44:00.452+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440452,
       "maxUsedPercent": 9,
       "samples": 1093,
@@ -10250,13 +10250,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-10T09:49:58.000+12:00",
+      "startAt": "2026-07-10T09:49:58+12:00",
       "startAtMs": 1783633798000,
-      "resetAt": "2026-07-17T09:49:58.000+12:00",
+      "resetAt": "2026-07-17T09:49:58+12:00",
       "resetAtMs": 1784238598000,
-      "firstObservedAt": "2026-07-10T09:59:24.770+12:00",
+      "firstObservedAt": "2026-07-10T09:59:24+12:00",
       "firstObservedAtMs": 1783634364770,
-      "lastObservedAt": "2026-07-14T03:44:00.456+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440456,
       "maxUsedPercent": 10,
       "samples": 106,
@@ -10274,13 +10274,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-10T09:49:58.000+12:00",
+      "startAt": "2026-07-10T09:49:58+12:00",
       "startAtMs": 1783633798000,
-      "resetAt": "2026-07-17T09:49:58.000+12:00",
+      "resetAt": "2026-07-17T09:49:58+12:00",
       "resetAtMs": 1784238598000,
-      "firstObservedAt": "2026-07-10T10:10:21.922+12:00",
+      "firstObservedAt": "2026-07-10T10:10:21+12:00",
       "firstObservedAtMs": 1783635021922,
-      "lastObservedAt": "2026-07-14T03:44:00.570+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440570,
       "maxUsedPercent": 15,
       "samples": 3442,
@@ -10298,13 +10298,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-11T05:58:25.000+12:00",
+      "startAt": "2026-07-11T05:58:25+12:00",
       "startAtMs": 1783706305000,
-      "resetAt": "2026-07-18T05:58:25.000+12:00",
+      "resetAt": "2026-07-18T05:58:25+12:00",
       "resetAtMs": 1784311105000,
-      "firstObservedAt": "2026-07-11T06:20:38.444+12:00",
+      "firstObservedAt": "2026-07-11T06:20:38+12:00",
       "firstObservedAtMs": 1783707638444,
-      "lastObservedAt": "2026-07-14T03:44:00.583+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440583,
       "maxUsedPercent": 1,
       "samples": 270,
@@ -10322,13 +10322,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-11T05:58:25.000+12:00",
+      "startAt": "2026-07-11T05:58:25+12:00",
       "startAtMs": 1783706305000,
-      "resetAt": "2026-07-18T05:58:25.000+12:00",
+      "resetAt": "2026-07-18T05:58:25+12:00",
       "resetAtMs": 1784311105000,
-      "firstObservedAt": "2026-07-11T08:19:08.848+12:00",
+      "firstObservedAt": "2026-07-11T08:19:08+12:00",
       "firstObservedAtMs": 1783714748848,
-      "lastObservedAt": "2026-07-14T03:44:00.593+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440593,
       "maxUsedPercent": 2,
       "samples": 196,
@@ -10347,13 +10347,13 @@
         "secondary",
         "primary"
       ],
-      "startAt": "2026-07-11T18:48:42.000+12:00",
+      "startAt": "2026-07-11T18:48:42+12:00",
       "startAtMs": 1783752522000,
-      "resetAt": "2026-07-18T18:48:42.000+12:00",
+      "resetAt": "2026-07-18T18:48:42+12:00",
       "resetAtMs": 1784357322000,
-      "firstObservedAt": "2026-07-11T20:31:51.953+12:00",
+      "firstObservedAt": "2026-07-11T20:31:51+12:00",
       "firstObservedAtMs": 1783758711953,
-      "lastObservedAt": "2026-07-14T03:44:00.751+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440751,
       "maxUsedPercent": 26,
       "samples": 4435,
@@ -10371,13 +10371,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-11T18:48:42.000+12:00",
+      "startAt": "2026-07-11T18:48:42+12:00",
       "startAtMs": 1783752522000,
-      "resetAt": "2026-07-18T18:48:42.000+12:00",
+      "resetAt": "2026-07-18T18:48:42+12:00",
       "resetAtMs": 1784357322000,
-      "firstObservedAt": "2026-07-11T18:48:41.100+12:00",
+      "firstObservedAt": "2026-07-11T18:48:41+12:00",
       "firstObservedAtMs": 1783752521100,
-      "lastObservedAt": "2026-07-14T03:44:00.719+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00",
       "lastObservedAtMs": 1783957440719,
       "maxUsedPercent": 18,
       "samples": 2867,
@@ -10395,13 +10395,13 @@
       "bucketPaths": [
         "secondary"
       ],
-      "startAt": "2026-07-11T18:48:42.000+12:00",
+      "startAt": "2026-07-11T18:48:42+12:00",
       "startAtMs": 1783752522000,
-      "resetAt": "2026-07-18T18:48:42.000+12:00",
+      "resetAt": "2026-07-18T18:48:42+12:00",
       "resetAtMs": 1784357322000,
-      "firstObservedAt": "2026-07-12T03:44:08.772+12:00",
+      "firstObservedAt": "2026-07-12T03:44:08+12:00",
       "firstObservedAtMs": 1783784648772,
-      "lastObservedAt": "2026-07-12T03:49:59.675+12:00",
+      "lastObservedAt": "2026-07-12T03:49:59+12:00",
       "lastObservedAtMs": 1783784999675,
       "maxUsedPercent": 3,
       "samples": 192,
@@ -10419,13 +10419,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-13T07:06:33.000+12:00",
+      "startAt": "2026-07-13T07:06:33+12:00",
       "startAtMs": 1783883193000,
-      "resetAt": "2026-07-20T07:06:33.000+12:00",
+      "resetAt": "2026-07-20T07:06:33+12:00",
       "resetAtMs": 1784487993000,
-      "firstObservedAt": "2026-07-14T04:08:01.640+12:00",
+      "firstObservedAt": "2026-07-14T04:08:01+12:00",
       "firstObservedAtMs": 1783958881640,
-      "lastObservedAt": "2026-07-14T04:56:56.507+12:00",
+      "lastObservedAt": "2026-07-14T04:56:56+12:00",
       "lastObservedAtMs": 1783961816507,
       "maxUsedPercent": 19,
       "samples": 167,
@@ -10443,13 +10443,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-13T07:06:33.000+12:00",
+      "startAt": "2026-07-13T07:06:33+12:00",
       "startAtMs": 1783883193000,
-      "resetAt": "2026-07-20T07:06:33.000+12:00",
+      "resetAt": "2026-07-20T07:06:33+12:00",
       "resetAtMs": 1784487993000,
-      "firstObservedAt": "2026-07-13T07:06:32.585+12:00",
+      "firstObservedAt": "2026-07-13T07:06:32+12:00",
       "firstObservedAtMs": 1783883192585,
-      "lastObservedAt": "2026-07-14T10:40:46.892+12:00",
+      "lastObservedAt": "2026-07-14T10:40:46+12:00",
       "lastObservedAtMs": 1783982446892,
       "maxUsedPercent": 35,
       "samples": 4901,
@@ -10467,13 +10467,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-14T21:57:39.000+12:00",
+      "startAt": "2026-07-14T21:57:39+12:00",
       "startAtMs": 1784023059000,
-      "resetAt": "2026-07-21T21:57:39.000+12:00",
+      "resetAt": "2026-07-21T21:57:39+12:00",
       "resetAtMs": 1784627859000,
-      "firstObservedAt": "2026-07-14T21:57:39.878+12:00",
+      "firstObservedAt": "2026-07-14T21:57:39+12:00",
       "firstObservedAtMs": 1784023059878,
-      "lastObservedAt": "2026-07-15T08:35:30.088+12:00",
+      "lastObservedAt": "2026-07-15T08:35:30+12:00",
       "lastObservedAtMs": 1784061330088,
       "maxUsedPercent": 20,
       "samples": 530,
@@ -10491,13 +10491,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-15T08:35:33.000+12:00",
+      "startAt": "2026-07-15T08:35:33+12:00",
       "startAtMs": 1784061333000,
-      "resetAt": "2026-07-22T08:35:33.000+12:00",
+      "resetAt": "2026-07-22T08:35:33+12:00",
       "resetAtMs": 1784666133000,
-      "firstObservedAt": "2026-07-15T08:35:32.399+12:00",
+      "firstObservedAt": "2026-07-15T08:35:32+12:00",
       "firstObservedAtMs": 1784061332399,
-      "lastObservedAt": "2026-07-18T08:18:24.599+12:00",
+      "lastObservedAt": "2026-07-18T08:18:24+12:00",
       "lastObservedAtMs": 1784319504599,
       "maxUsedPercent": 37,
       "samples": 9537,
@@ -10515,13 +10515,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-15T08:35:33.000+12:00",
+      "startAt": "2026-07-15T08:35:33+12:00",
       "startAtMs": 1784061333000,
-      "resetAt": "2026-07-22T08:35:33.000+12:00",
+      "resetAt": "2026-07-22T08:35:33+12:00",
       "resetAtMs": 1784666133000,
-      "firstObservedAt": "2026-07-15T10:04:48.553+12:00",
+      "firstObservedAt": "2026-07-15T10:04:48+12:00",
       "firstObservedAtMs": 1784066688553,
-      "lastObservedAt": "2026-07-16T08:26:41.322+12:00",
+      "lastObservedAt": "2026-07-16T08:26:41+12:00",
       "lastObservedAtMs": 1784147201322,
       "maxUsedPercent": 23,
       "samples": 405,
@@ -10539,13 +10539,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-16T16:54:31.000+12:00",
+      "startAt": "2026-07-16T16:54:31+12:00",
       "startAtMs": 1784177671000,
-      "resetAt": "2026-07-23T16:54:31.000+12:00",
+      "resetAt": "2026-07-23T16:54:31+12:00",
       "resetAtMs": 1784782471000,
-      "firstObservedAt": "2026-07-16T16:54:29.543+12:00",
+      "firstObservedAt": "2026-07-16T16:54:29+12:00",
       "firstObservedAtMs": 1784177669543,
-      "lastObservedAt": "2026-07-18T08:29:54.498+12:00",
+      "lastObservedAt": "2026-07-18T08:29:54+12:00",
       "lastObservedAtMs": 1784320194498,
       "maxUsedPercent": 100,
       "samples": 41199,
@@ -10563,13 +10563,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-16T16:54:31.000+12:00",
+      "startAt": "2026-07-16T16:54:31+12:00",
       "startAtMs": 1784177671000,
-      "resetAt": "2026-07-23T16:54:31.000+12:00",
+      "resetAt": "2026-07-23T16:54:31+12:00",
       "resetAtMs": 1784782471000,
-      "firstObservedAt": "2026-07-16T20:13:21.529+12:00",
+      "firstObservedAt": "2026-07-16T20:13:21+12:00",
       "firstObservedAtMs": 1784189601529,
-      "lastObservedAt": "2026-07-18T08:01:19.645+12:00",
+      "lastObservedAt": "2026-07-18T08:01:19+12:00",
       "lastObservedAtMs": 1784318479645,
       "maxUsedPercent": 100,
       "samples": 1531,
@@ -10587,13 +10587,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-18T08:38:35.000+12:00",
+      "startAt": "2026-07-18T08:38:35+12:00",
       "startAtMs": 1784320715000,
-      "resetAt": "2026-07-25T08:38:35.000+12:00",
+      "resetAt": "2026-07-25T08:38:35+12:00",
       "resetAtMs": 1784925515000,
-      "firstObservedAt": "2026-07-18T08:36:21.932+12:00",
+      "firstObservedAt": "2026-07-18T08:36:21+12:00",
       "firstObservedAtMs": 1784320581932,
-      "lastObservedAt": "2026-07-18T10:41:47.129+12:00",
+      "lastObservedAt": "2026-07-18T10:41:47+12:00",
       "lastObservedAtMs": 1784328107129,
       "maxUsedPercent": 1,
       "samples": 35,
@@ -10611,13 +10611,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-18T10:45:09.000+12:00",
+      "startAt": "2026-07-18T10:45:09+12:00",
       "startAtMs": 1784328309000,
-      "resetAt": "2026-07-25T10:45:09.000+12:00",
+      "resetAt": "2026-07-25T10:45:09+12:00",
       "resetAtMs": 1784933109000,
-      "firstObservedAt": "2026-07-18T10:45:11.845+12:00",
+      "firstObservedAt": "2026-07-18T10:45:11+12:00",
       "firstObservedAtMs": 1784328311845,
-      "lastObservedAt": "2026-07-18T14:10:46.423+12:00",
+      "lastObservedAt": "2026-07-18T14:10:46+12:00",
       "lastObservedAtMs": 1784340646423,
       "maxUsedPercent": 9,
       "samples": 484,
@@ -10635,13 +10635,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-18T10:45:09.000+12:00",
+      "startAt": "2026-07-18T10:45:09+12:00",
       "startAtMs": 1784328309000,
-      "resetAt": "2026-07-25T10:45:09.000+12:00",
+      "resetAt": "2026-07-25T10:45:09+12:00",
       "resetAtMs": 1784933109000,
-      "firstObservedAt": "2026-07-18T10:45:40.361+12:00",
+      "firstObservedAt": "2026-07-18T10:45:40+12:00",
       "firstObservedAtMs": 1784328340361,
-      "lastObservedAt": "2026-07-18T10:52:12.158+12:00",
+      "lastObservedAt": "2026-07-18T10:52:12+12:00",
       "lastObservedAtMs": 1784328732158,
       "maxUsedPercent": 1,
       "samples": 19,
@@ -10659,13 +10659,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-18T15:26:23.000+12:00",
+      "startAt": "2026-07-18T15:26:23+12:00",
       "startAtMs": 1784345183000,
-      "resetAt": "2026-07-25T15:26:23.000+12:00",
+      "resetAt": "2026-07-25T15:26:23+12:00",
       "resetAtMs": 1784949983000,
-      "firstObservedAt": "2026-07-20T08:44:31.861+12:00",
+      "firstObservedAt": "2026-07-20T08:44:31+12:00",
       "firstObservedAtMs": 1784493871861,
-      "lastObservedAt": "2026-07-20T08:45:02.311+12:00",
+      "lastObservedAt": "2026-07-20T08:45:02+12:00",
       "lastObservedAtMs": 1784493902311,
       "maxUsedPercent": 85,
       "samples": 4,
@@ -10683,13 +10683,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-18T15:26:23.000+12:00",
+      "startAt": "2026-07-18T15:26:23+12:00",
       "startAtMs": 1784345183000,
-      "resetAt": "2026-07-25T15:26:23.000+12:00",
+      "resetAt": "2026-07-25T15:26:23+12:00",
       "resetAtMs": 1784949983000,
-      "firstObservedAt": "2026-07-18T15:26:21.455+12:00",
+      "firstObservedAt": "2026-07-18T15:26:21+12:00",
       "firstObservedAtMs": 1784345181455,
-      "lastObservedAt": "2026-07-22T11:19:41.760+12:00",
+      "lastObservedAt": "2026-07-22T11:19:41+12:00",
       "lastObservedAtMs": 1784675981760,
       "maxUsedPercent": 100,
       "samples": 4966,
@@ -10707,13 +10707,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-20T22:36:03.000+12:00",
+      "startAt": "2026-07-20T22:36:03+12:00",
       "startAtMs": 1784543763000,
-      "resetAt": "2026-07-27T22:36:03.000+12:00",
+      "resetAt": "2026-07-27T22:36:03+12:00",
       "resetAtMs": 1785148563000,
-      "firstObservedAt": "2026-07-20T22:36:03.429+12:00",
+      "firstObservedAt": "2026-07-20T22:36:03+12:00",
       "firstObservedAtMs": 1784543763429,
-      "lastObservedAt": "2026-07-21T10:02:39.483+12:00",
+      "lastObservedAt": "2026-07-21T10:02:39+12:00",
       "lastObservedAtMs": 1784584959483,
       "maxUsedPercent": 16,
       "samples": 182,
@@ -10731,13 +10731,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-22T09:19:23.000+12:00",
+      "startAt": "2026-07-22T09:19:23+12:00",
       "startAtMs": 1784668763000,
-      "resetAt": "2026-07-29T09:19:23.000+12:00",
+      "resetAt": "2026-07-29T09:19:23+12:00",
       "resetAtMs": 1785273563000,
-      "firstObservedAt": "2026-07-22T09:34:03.002+12:00",
+      "firstObservedAt": "2026-07-22T09:34:03+12:00",
       "firstObservedAtMs": 1784669643002,
-      "lastObservedAt": "2026-07-22T22:56:00.272+12:00",
+      "lastObservedAt": "2026-07-22T22:56:00+12:00",
       "lastObservedAtMs": 1784717760272,
       "maxUsedPercent": 38,
       "samples": 575,
@@ -10755,13 +10755,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-22T09:19:23.000+12:00",
+      "startAt": "2026-07-22T09:19:23+12:00",
       "startAtMs": 1784668763000,
-      "resetAt": "2026-07-29T09:19:23.000+12:00",
+      "resetAt": "2026-07-29T09:19:23+12:00",
       "resetAtMs": 1785273563000,
-      "firstObservedAt": "2026-07-22T10:39:54.790+12:00",
+      "firstObservedAt": "2026-07-22T10:39:54+12:00",
       "firstObservedAtMs": 1784673594790,
-      "lastObservedAt": "2026-07-22T10:53:41.535+12:00",
+      "lastObservedAt": "2026-07-22T10:53:41+12:00",
       "lastObservedAtMs": 1784674421535,
       "maxUsedPercent": 4,
       "samples": 23,
@@ -10779,13 +10779,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-22T09:28:55.000+12:00",
+      "startAt": "2026-07-22T09:28:55+12:00",
       "startAtMs": 1784669335000,
-      "resetAt": "2026-07-29T09:28:55.000+12:00",
+      "resetAt": "2026-07-29T09:28:55+12:00",
       "resetAtMs": 1785274135000,
-      "firstObservedAt": "2026-07-22T09:28:54.211+12:00",
+      "firstObservedAt": "2026-07-22T09:28:54+12:00",
       "firstObservedAtMs": 1784669334211,
-      "lastObservedAt": "2026-07-22T10:00:28.415+12:00",
+      "lastObservedAt": "2026-07-22T10:00:28+12:00",
       "lastObservedAtMs": 1784671228415,
       "maxUsedPercent": 1,
       "samples": 16,
@@ -10803,13 +10803,13 @@
       "bucketPaths": [
         "primary"
       ],
-      "startAt": "2026-07-22T09:28:55.000+12:00",
+      "startAt": "2026-07-22T09:28:55+12:00",
       "startAtMs": 1784669335000,
-      "resetAt": "2026-07-29T09:28:55.000+12:00",
+      "resetAt": "2026-07-29T09:28:55+12:00",
       "resetAtMs": 1785274135000,
-      "firstObservedAt": "2026-07-22T22:57:10.677+12:00",
+      "firstObservedAt": "2026-07-22T22:57:10+12:00",
       "firstObservedAtMs": 1784717830677,
-      "lastObservedAt": "2026-07-22T23:59:40.876+12:00",
+      "lastObservedAt": "2026-07-22T23:59:40+12:00",
       "lastObservedAtMs": 1784721580876,
       "maxUsedPercent": 2,
       "samples": 58,
@@ -10840,10 +10840,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-001",
-      "startAt": "2026-05-20T08:43:13.000+12:00",
-      "resetAt": "2026-05-27T08:43:13.000+12:00",
-      "firstObservedAt": "2026-05-22T19:06:46.472+12:00",
-      "lastObservedAt": "2026-05-24T07:22:05.558+12:00"
+      "startAt": "2026-05-20T08:43:13+12:00",
+      "resetAt": "2026-05-27T08:43:13+12:00",
+      "firstObservedAt": "2026-05-22T19:06:46+12:00",
+      "lastObservedAt": "2026-05-24T07:22:05+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -10866,10 +10866,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-002",
-      "startAt": "2026-05-24T08:33:24.000+12:00",
-      "resetAt": "2026-05-31T08:33:24.000+12:00",
-      "firstObservedAt": "2026-05-24T08:33:08.356+12:00",
-      "lastObservedAt": "2026-05-31T07:58:37.331+12:00"
+      "startAt": "2026-05-24T08:33:24+12:00",
+      "resetAt": "2026-05-31T08:33:24+12:00",
+      "firstObservedAt": "2026-05-24T08:33:08+12:00",
+      "lastObservedAt": "2026-05-31T07:58:37+12:00"
     },
     {
       "laneKey": "main|unknown|unknown",
@@ -10892,10 +10892,10 @@
       "confidence": "strong",
       "confidenceScore": 0.72,
       "id": "quota-claim-003",
-      "startAt": "2026-05-24T08:33:24.000+12:00",
-      "resetAt": "2026-05-31T08:33:24.000+12:00",
-      "firstObservedAt": "2026-05-25T08:14:19.307+12:00",
-      "lastObservedAt": "2026-05-25T08:14:35.375+12:00"
+      "startAt": "2026-05-24T08:33:24+12:00",
+      "resetAt": "2026-05-31T08:33:24+12:00",
+      "firstObservedAt": "2026-05-25T08:14:19+12:00",
+      "lastObservedAt": "2026-05-25T08:14:35+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -10918,10 +10918,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-004",
-      "startAt": "2026-05-31T10:34:39.000+12:00",
-      "resetAt": "2026-06-07T10:34:39.000+12:00",
-      "firstObservedAt": "2026-05-31T15:09:10.854+12:00",
-      "lastObservedAt": "2026-06-01T21:27:52.660+12:00"
+      "startAt": "2026-05-31T10:34:39+12:00",
+      "resetAt": "2026-06-07T10:34:39+12:00",
+      "firstObservedAt": "2026-05-31T15:09:10+12:00",
+      "lastObservedAt": "2026-06-01T21:27:52+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -10946,10 +10946,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-005",
-      "startAt": "2026-06-01T05:40:37.000+12:00",
-      "resetAt": "2026-06-08T05:40:37.000+12:00",
-      "firstObservedAt": "2026-06-01T05:46:35.605+12:00",
-      "lastObservedAt": "2026-06-04T10:49:37.406+12:00"
+      "startAt": "2026-06-01T05:40:37+12:00",
+      "resetAt": "2026-06-08T05:40:37+12:00",
+      "firstObservedAt": "2026-06-01T05:46:35+12:00",
+      "lastObservedAt": "2026-06-04T10:49:37+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -10972,10 +10972,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-006",
-      "startAt": "2026-06-04T13:54:56.000+12:00",
-      "resetAt": "2026-06-11T13:54:56.000+12:00",
-      "firstObservedAt": "2026-06-04T15:10:02.037+12:00",
-      "lastObservedAt": "2026-06-11T13:09:03.647+12:00"
+      "startAt": "2026-06-04T13:54:56+12:00",
+      "resetAt": "2026-06-11T13:54:56+12:00",
+      "firstObservedAt": "2026-06-04T15:10:02+12:00",
+      "lastObservedAt": "2026-06-11T13:09:03+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -10998,10 +10998,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-007",
-      "startAt": "2026-06-11T13:55:16.000+12:00",
-      "resetAt": "2026-06-18T13:55:16.000+12:00",
-      "firstObservedAt": "2026-06-11T18:03:11.279+12:00",
-      "lastObservedAt": "2026-06-16T10:32:00.708+12:00"
+      "startAt": "2026-06-11T13:55:16+12:00",
+      "resetAt": "2026-06-18T13:55:16+12:00",
+      "firstObservedAt": "2026-06-11T18:03:11+12:00",
+      "lastObservedAt": "2026-06-16T10:32:00+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11026,10 +11026,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-008",
-      "startAt": "2026-06-16T10:32:02.000+12:00",
-      "resetAt": "2026-06-23T10:32:02.000+12:00",
-      "firstObservedAt": "2026-06-16T10:32:02.428+12:00",
-      "lastObservedAt": "2026-06-18T08:45:08.193+12:00"
+      "startAt": "2026-06-16T10:32:02+12:00",
+      "resetAt": "2026-06-23T10:32:02+12:00",
+      "firstObservedAt": "2026-06-16T10:32:02+12:00",
+      "lastObservedAt": "2026-06-18T08:45:08+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11052,10 +11052,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-009",
-      "startAt": "2026-06-18T10:00:31.000+12:00",
-      "resetAt": "2026-06-25T10:00:31.000+12:00",
-      "firstObservedAt": "2026-06-18T13:00:56.658+12:00",
-      "lastObservedAt": "2026-06-24T10:15:38.217+12:00"
+      "startAt": "2026-06-18T10:00:31+12:00",
+      "resetAt": "2026-06-25T10:00:31+12:00",
+      "firstObservedAt": "2026-06-18T13:00:56+12:00",
+      "lastObservedAt": "2026-06-24T10:15:38+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11078,10 +11078,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-010",
-      "startAt": "2026-06-25T13:01:03.000+12:00",
-      "resetAt": "2026-07-02T13:01:03.000+12:00",
-      "firstObservedAt": "2026-06-25T15:44:59.645+12:00",
-      "lastObservedAt": "2026-06-29T10:36:43.177+12:00"
+      "startAt": "2026-06-25T13:01:03+12:00",
+      "resetAt": "2026-07-02T13:01:03+12:00",
+      "firstObservedAt": "2026-06-25T15:44:59+12:00",
+      "lastObservedAt": "2026-06-29T10:36:43+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11104,10 +11104,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-011",
-      "startAt": "2026-06-29T18:37:58.000+12:00",
-      "resetAt": "2026-07-06T18:37:58.000+12:00",
-      "firstObservedAt": "2026-06-29T19:17:33.700+12:00",
-      "lastObservedAt": "2026-06-30T11:38:10.648+12:00"
+      "startAt": "2026-06-29T18:37:58+12:00",
+      "resetAt": "2026-07-06T18:37:58+12:00",
+      "firstObservedAt": "2026-06-29T19:17:33+12:00",
+      "lastObservedAt": "2026-06-30T11:38:10+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11132,10 +11132,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-012",
-      "startAt": "2026-06-30T14:49:47.000+12:00",
-      "resetAt": "2026-07-07T14:49:47.000+12:00",
-      "firstObservedAt": "2026-06-30T21:31:37.501+12:00",
-      "lastObservedAt": "2026-07-07T14:01:22.690+12:00"
+      "startAt": "2026-06-30T14:49:47+12:00",
+      "resetAt": "2026-07-07T14:49:47+12:00",
+      "firstObservedAt": "2026-06-30T21:31:37+12:00",
+      "lastObservedAt": "2026-07-07T14:01:22+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11158,10 +11158,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-013",
-      "startAt": "2026-07-07T17:02:06.000+12:00",
-      "resetAt": "2026-07-14T17:02:06.000+12:00",
-      "firstObservedAt": "2026-07-07T17:21:27.585+12:00",
-      "lastObservedAt": "2026-07-14T03:44:00.452+12:00"
+      "startAt": "2026-07-07T17:02:06+12:00",
+      "resetAt": "2026-07-14T17:02:06+12:00",
+      "firstObservedAt": "2026-07-07T17:21:27+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11186,10 +11186,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-014",
-      "startAt": "2026-07-10T09:49:58.000+12:00",
-      "resetAt": "2026-07-17T09:49:58.000+12:00",
-      "firstObservedAt": "2026-07-10T09:59:24.770+12:00",
-      "lastObservedAt": "2026-07-14T03:44:00.570+12:00"
+      "startAt": "2026-07-10T09:49:58+12:00",
+      "resetAt": "2026-07-17T09:49:58+12:00",
+      "firstObservedAt": "2026-07-10T09:59:24+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11214,10 +11214,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-015",
-      "startAt": "2026-07-11T05:58:25.000+12:00",
-      "resetAt": "2026-07-18T05:58:25.000+12:00",
-      "firstObservedAt": "2026-07-11T06:20:38.444+12:00",
-      "lastObservedAt": "2026-07-14T03:44:00.593+12:00"
+      "startAt": "2026-07-11T05:58:25+12:00",
+      "resetAt": "2026-07-18T05:58:25+12:00",
+      "firstObservedAt": "2026-07-11T06:20:38+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11244,10 +11244,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-016",
-      "startAt": "2026-07-11T18:48:42.000+12:00",
-      "resetAt": "2026-07-18T18:48:42.000+12:00",
-      "firstObservedAt": "2026-07-11T18:48:41.100+12:00",
-      "lastObservedAt": "2026-07-14T03:44:00.751+12:00"
+      "startAt": "2026-07-11T18:48:42+12:00",
+      "resetAt": "2026-07-18T18:48:42+12:00",
+      "firstObservedAt": "2026-07-11T18:48:41+12:00",
+      "lastObservedAt": "2026-07-14T03:44:00+12:00"
     },
     {
       "laneKey": "main|codex|pro",
@@ -11272,10 +11272,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-017",
-      "startAt": "2026-07-13T07:06:33.000+12:00",
-      "resetAt": "2026-07-20T07:06:33.000+12:00",
-      "firstObservedAt": "2026-07-13T07:06:32.585+12:00",
-      "lastObservedAt": "2026-07-14T10:40:46.892+12:00"
+      "startAt": "2026-07-13T07:06:33+12:00",
+      "resetAt": "2026-07-20T07:06:33+12:00",
+      "firstObservedAt": "2026-07-13T07:06:32+12:00",
+      "lastObservedAt": "2026-07-14T10:40:46+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11298,10 +11298,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-018",
-      "startAt": "2026-07-14T21:57:39.000+12:00",
-      "resetAt": "2026-07-21T21:57:39.000+12:00",
-      "firstObservedAt": "2026-07-14T21:57:39.878+12:00",
-      "lastObservedAt": "2026-07-15T08:35:30.088+12:00"
+      "startAt": "2026-07-14T21:57:39+12:00",
+      "resetAt": "2026-07-21T21:57:39+12:00",
+      "firstObservedAt": "2026-07-14T21:57:39+12:00",
+      "lastObservedAt": "2026-07-15T08:35:30+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11326,10 +11326,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-019",
-      "startAt": "2026-07-15T08:35:33.000+12:00",
-      "resetAt": "2026-07-22T08:35:33.000+12:00",
-      "firstObservedAt": "2026-07-15T08:35:32.399+12:00",
-      "lastObservedAt": "2026-07-18T08:18:24.599+12:00"
+      "startAt": "2026-07-15T08:35:33+12:00",
+      "resetAt": "2026-07-22T08:35:33+12:00",
+      "firstObservedAt": "2026-07-15T08:35:32+12:00",
+      "lastObservedAt": "2026-07-18T08:18:24+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11354,10 +11354,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-020",
-      "startAt": "2026-07-16T16:54:31.000+12:00",
-      "resetAt": "2026-07-23T16:54:31.000+12:00",
-      "firstObservedAt": "2026-07-16T16:54:29.543+12:00",
-      "lastObservedAt": "2026-07-18T08:29:54.498+12:00"
+      "startAt": "2026-07-16T16:54:31+12:00",
+      "resetAt": "2026-07-23T16:54:31+12:00",
+      "firstObservedAt": "2026-07-16T16:54:29+12:00",
+      "lastObservedAt": "2026-07-18T08:29:54+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11380,10 +11380,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-021",
-      "startAt": "2026-07-18T08:38:35.000+12:00",
-      "resetAt": "2026-07-25T08:38:35.000+12:00",
-      "firstObservedAt": "2026-07-18T08:36:21.932+12:00",
-      "lastObservedAt": "2026-07-18T10:41:47.129+12:00"
+      "startAt": "2026-07-18T08:38:35+12:00",
+      "resetAt": "2026-07-25T08:38:35+12:00",
+      "firstObservedAt": "2026-07-18T08:36:21+12:00",
+      "lastObservedAt": "2026-07-18T10:41:47+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11408,10 +11408,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-022",
-      "startAt": "2026-07-18T10:45:09.000+12:00",
-      "resetAt": "2026-07-25T10:45:09.000+12:00",
-      "firstObservedAt": "2026-07-18T10:45:11.845+12:00",
-      "lastObservedAt": "2026-07-18T14:10:46.423+12:00"
+      "startAt": "2026-07-18T10:45:09+12:00",
+      "resetAt": "2026-07-25T10:45:09+12:00",
+      "firstObservedAt": "2026-07-18T10:45:11+12:00",
+      "lastObservedAt": "2026-07-18T14:10:46+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11436,10 +11436,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-023",
-      "startAt": "2026-07-18T15:26:23.000+12:00",
-      "resetAt": "2026-07-25T15:26:23.000+12:00",
-      "firstObservedAt": "2026-07-18T15:26:21.455+12:00",
-      "lastObservedAt": "2026-07-22T11:19:41.760+12:00"
+      "startAt": "2026-07-18T15:26:23+12:00",
+      "resetAt": "2026-07-25T15:26:23+12:00",
+      "firstObservedAt": "2026-07-18T15:26:21+12:00",
+      "lastObservedAt": "2026-07-22T11:19:41+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11462,10 +11462,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-024",
-      "startAt": "2026-07-20T22:36:03.000+12:00",
-      "resetAt": "2026-07-27T22:36:03.000+12:00",
-      "firstObservedAt": "2026-07-20T22:36:03.429+12:00",
-      "lastObservedAt": "2026-07-21T10:02:39.483+12:00"
+      "startAt": "2026-07-20T22:36:03+12:00",
+      "resetAt": "2026-07-27T22:36:03+12:00",
+      "firstObservedAt": "2026-07-20T22:36:03+12:00",
+      "lastObservedAt": "2026-07-21T10:02:39+12:00"
     },
     {
       "laneKey": "main|codex|prolite",
@@ -11492,10 +11492,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-025",
-      "startAt": "2026-07-22T09:19:23.000+12:00",
-      "resetAt": "2026-07-29T09:19:23.000+12:00",
-      "firstObservedAt": "2026-07-22T09:28:54.211+12:00",
-      "lastObservedAt": "2026-07-22T22:56:00.272+12:00"
+      "startAt": "2026-07-22T09:19:23+12:00",
+      "resetAt": "2026-07-29T09:19:23+12:00",
+      "firstObservedAt": "2026-07-22T09:28:54+12:00",
+      "lastObservedAt": "2026-07-22T22:56:00+12:00"
     },
     {
       "laneKey": "spark|codex_bengalfox|prolite",
@@ -11518,10 +11518,10 @@
       "confidence": "confirmed",
       "confidenceScore": 0.9,
       "id": "quota-claim-026",
-      "startAt": "2026-07-22T09:28:55.000+12:00",
-      "resetAt": "2026-07-29T09:28:55.000+12:00",
-      "firstObservedAt": "2026-07-22T22:57:10.677+12:00",
-      "lastObservedAt": "2026-07-22T23:59:40.876+12:00"
+      "startAt": "2026-07-22T09:28:55+12:00",
+      "resetAt": "2026-07-29T09:28:55+12:00",
+      "firstObservedAt": "2026-07-22T22:57:10+12:00",
+      "lastObservedAt": "2026-07-22T23:59:40+12:00"
     }
   ],
   "events": [
@@ -11533,10 +11533,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-05-24T08:33:24.000+12:00",
+      "inferredAt": "2026-05-24T08:33:24+12:00",
       "inferredAtMs": 1779568404000,
-      "previousAdvertisedReset": "2026-05-27T08:43:13.000+12:00",
-      "newAdvertisedReset": "2026-05-31T08:33:24.000+12:00",
+      "previousAdvertisedReset": "2026-05-27T08:43:13+12:00",
+      "newAdvertisedReset": "2026-05-31T08:33:24+12:00",
       "scheduleDeltaHours": -72.16,
       "handoffGapHours": 1.18,
       "overlapHours": 0,
@@ -11545,7 +11545,7 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0,
-      "billingAnchor": "2026-05-21T05:34:00.000+12:00",
+      "billingAnchor": "2026-05-21T05:34:00+12:00",
       "billingDistanceHours": 74.99,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-002"
@@ -11558,10 +11558,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-05-31T10:34:39.000+12:00",
+      "inferredAt": "2026-05-31T10:34:39+12:00",
       "inferredAtMs": 1780180479000,
-      "previousAdvertisedReset": "2026-05-31T08:33:24.000+12:00",
-      "newAdvertisedReset": "2026-06-07T10:34:39.000+12:00",
+      "previousAdvertisedReset": "2026-05-31T08:33:24+12:00",
+      "newAdvertisedReset": "2026-06-07T10:34:39+12:00",
       "scheduleDeltaHours": 2.02,
       "handoffGapHours": 7.18,
       "overlapHours": 0,
@@ -11570,11 +11570,11 @@
       "cause": "scheduled-window-reset",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-05-28T05:34:00.000+12:00",
+      "billingAnchor": "2026-05-28T05:34:00+12:00",
       "billingDistanceHours": 77.01,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-01T08:42:40.480+12:00",
+          "timestamp": "2026-06-01T08:42:40+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11592,10 +11592,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-01T05:40:37.000+12:00",
+      "inferredAt": "2026-06-01T05:40:37+12:00",
       "inferredAtMs": 1780249237000,
-      "previousAdvertisedReset": "2026-06-07T10:34:39.000+12:00",
-      "newAdvertisedReset": "2026-06-08T05:40:37.000+12:00",
+      "previousAdvertisedReset": "2026-06-07T10:34:39+12:00",
+      "newAdvertisedReset": "2026-06-08T05:40:37+12:00",
       "scheduleDeltaHours": -148.9,
       "handoffGapHours": -15.69,
       "overlapHours": 15.69,
@@ -11604,11 +11604,11 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-06-04T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-04T05:34:00+12:00",
       "billingDistanceHours": 71.89,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-01T08:42:40.480+12:00",
+          "timestamp": "2026-06-01T08:42:40+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11626,10 +11626,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-04T13:54:56.000+12:00",
+      "inferredAt": "2026-06-04T13:54:56+12:00",
       "inferredAtMs": 1780538096000,
-      "previousAdvertisedReset": "2026-06-08T05:40:37.000+12:00",
-      "newAdvertisedReset": "2026-06-11T13:54:56.000+12:00",
+      "previousAdvertisedReset": "2026-06-08T05:40:37+12:00",
+      "newAdvertisedReset": "2026-06-11T13:54:56+12:00",
       "scheduleDeltaHours": -87.76,
       "handoffGapHours": 4.34,
       "overlapHours": 0,
@@ -11638,7 +11638,7 @@
       "cause": "billing-phase-candidate",
       "eventConfidence": 0.88,
       "manualEvidence": 0,
-      "billingAnchor": "2026-06-04T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-04T05:34:00+12:00",
       "billingDistanceHours": 8.35,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-006"
@@ -11651,10 +11651,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-11T13:55:16.000+12:00",
+      "inferredAt": "2026-06-11T13:55:16+12:00",
       "inferredAtMs": 1781142916000,
-      "previousAdvertisedReset": "2026-06-11T13:54:56.000+12:00",
-      "newAdvertisedReset": "2026-06-18T13:55:16.000+12:00",
+      "previousAdvertisedReset": "2026-06-11T13:54:56+12:00",
+      "newAdvertisedReset": "2026-06-18T13:55:16+12:00",
       "scheduleDeltaHours": 0.01,
       "handoffGapHours": 4.9,
       "overlapHours": 0,
@@ -11663,11 +11663,11 @@
       "cause": "scheduled-window-reset",
       "eventConfidence": 0.88,
       "manualEvidence": 0.16,
-      "billingAnchor": "2026-06-11T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-11T05:34:00+12:00",
       "billingDistanceHours": 8.35,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-10T10:42:49.973+12:00",
+          "timestamp": "2026-06-10T10:42:49+12:00",
           "stance": "negative-intent",
           "evidenceWeight": 0.16,
           "imported": false,
@@ -11685,10 +11685,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-16T10:32:02.000+12:00",
+      "inferredAt": "2026-06-16T10:32:02+12:00",
       "inferredAtMs": 1781562722000,
-      "previousAdvertisedReset": "2026-06-18T13:55:16.000+12:00",
-      "newAdvertisedReset": "2026-06-23T10:32:02.000+12:00",
+      "previousAdvertisedReset": "2026-06-18T13:55:16+12:00",
+      "newAdvertisedReset": "2026-06-23T10:32:02+12:00",
       "scheduleDeltaHours": -51.39,
       "handoffGapHours": 0,
       "overlapHours": 0,
@@ -11697,39 +11697,39 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0.3,
-      "billingAnchor": "2026-06-14T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-14T05:34:00+12:00",
       "billingDistanceHours": 52.97,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-16T10:26:26.274+12:00",
+          "timestamp": "2026-06-16T10:26:26+12:00",
           "stance": "intention",
           "evidenceWeight": 0.3,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-16T16:07:23.675+12:00",
+          "timestamp": "2026-06-16T16:07:23+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-16T16:07:35.888+12:00",
+          "timestamp": "2026-06-16T16:07:35+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-16T17:07:53.925+12:00",
+          "timestamp": "2026-06-16T17:07:53+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-16T17:08:06.111+12:00",
+          "timestamp": "2026-06-16T17:08:06+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11747,10 +11747,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-18T10:00:31.000+12:00",
+      "inferredAt": "2026-06-18T10:00:31+12:00",
       "inferredAtMs": 1781733631000,
-      "previousAdvertisedReset": "2026-06-23T10:32:02.000+12:00",
-      "newAdvertisedReset": "2026-06-25T10:00:31.000+12:00",
+      "previousAdvertisedReset": "2026-06-23T10:32:02+12:00",
+      "newAdvertisedReset": "2026-06-25T10:00:31+12:00",
       "scheduleDeltaHours": -120.53,
       "handoffGapHours": 4.26,
       "overlapHours": 0,
@@ -11759,39 +11759,39 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-06-21T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-21T05:34:00+12:00",
       "billingDistanceHours": 67.56,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-19T07:05:56.972+12:00",
+          "timestamp": "2026-06-19T07:05:56+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-19T07:05:56.987+12:00",
+          "timestamp": "2026-06-19T07:05:56+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-17T11:54:36.715+12:00",
+          "timestamp": "2026-06-17T11:54:36+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-17T05:57:37.756+12:00",
+          "timestamp": "2026-06-17T05:57:37+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-17T05:47:37.694+12:00",
+          "timestamp": "2026-06-17T05:47:37+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11808,10 +11808,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-25T13:01:03.000+12:00",
+      "inferredAt": "2026-06-25T13:01:03+12:00",
       "inferredAtMs": 1782349263000,
-      "previousAdvertisedReset": "2026-06-25T10:00:31.000+12:00",
-      "newAdvertisedReset": "2026-07-02T13:01:03.000+12:00",
+      "previousAdvertisedReset": "2026-06-25T10:00:31+12:00",
+      "newAdvertisedReset": "2026-07-02T13:01:03+12:00",
       "scheduleDeltaHours": 3.01,
       "handoffGapHours": 29.49,
       "overlapHours": 0,
@@ -11820,7 +11820,7 @@
       "cause": "scheduled-window-reset",
       "eventConfidence": 0.88,
       "manualEvidence": 0,
-      "billingAnchor": "2026-06-28T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-28T05:34:00+12:00",
       "billingDistanceHours": 64.55,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-010"
@@ -11833,10 +11833,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-29T18:37:58.000+12:00",
+      "inferredAt": "2026-06-29T18:37:58+12:00",
       "inferredAtMs": 1782715078000,
-      "previousAdvertisedReset": "2026-07-02T13:01:03.000+12:00",
-      "newAdvertisedReset": "2026-07-06T18:37:58.000+12:00",
+      "previousAdvertisedReset": "2026-07-02T13:01:03+12:00",
+      "newAdvertisedReset": "2026-07-06T18:37:58+12:00",
       "scheduleDeltaHours": -66.38,
       "handoffGapHours": 8.68,
       "overlapHours": 0,
@@ -11845,39 +11845,39 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-06-28T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-28T05:34:00+12:00",
       "billingDistanceHours": 37.07,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-29T10:28:14.208+12:00",
+          "timestamp": "2026-06-29T10:28:14+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-29T09:58:48.844+12:00",
+          "timestamp": "2026-06-29T09:58:48+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-29T08:07:28.010+12:00",
+          "timestamp": "2026-06-29T08:07:28+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T06:17:49.235+12:00",
+          "timestamp": "2026-06-30T06:17:49+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T06:17:49.236+12:00",
+          "timestamp": "2026-06-30T06:17:49+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11895,10 +11895,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-06-30T14:49:47.000+12:00",
+      "inferredAt": "2026-06-30T14:49:47+12:00",
       "inferredAtMs": 1782787787000,
-      "previousAdvertisedReset": "2026-07-06T18:37:58.000+12:00",
-      "newAdvertisedReset": "2026-07-07T14:49:47.000+12:00",
+      "previousAdvertisedReset": "2026-07-06T18:37:58+12:00",
+      "newAdvertisedReset": "2026-07-07T14:49:47+12:00",
       "scheduleDeltaHours": -147.8,
       "handoffGapHours": 9.89,
       "overlapHours": 0,
@@ -11907,39 +11907,39 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-06-28T05:34:00.000+12:00",
+      "billingAnchor": "2026-06-28T05:34:00+12:00",
       "billingDistanceHours": 57.26,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-06-30T11:34:39.591+12:00",
+          "timestamp": "2026-06-30T11:34:39+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T11:34:39.590+12:00",
+          "timestamp": "2026-06-30T11:34:39+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T11:32:11.894+12:00",
+          "timestamp": "2026-06-30T11:32:11+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T11:32:11.893+12:00",
+          "timestamp": "2026-06-30T11:32:11+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-06-30T11:29:34.283+12:00",
+          "timestamp": "2026-06-30T11:29:34+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11957,10 +11957,10 @@
         "gpt-5.5"
       ],
       "planType": "pro",
-      "inferredAt": "2026-07-07T17:02:06.000+12:00",
+      "inferredAt": "2026-07-07T17:02:06+12:00",
       "inferredAtMs": 1783400526000,
-      "previousAdvertisedReset": "2026-07-07T14:49:47.000+12:00",
-      "newAdvertisedReset": "2026-07-14T17:02:06.000+12:00",
+      "previousAdvertisedReset": "2026-07-07T14:49:47+12:00",
+      "newAdvertisedReset": "2026-07-14T17:02:06+12:00",
       "scheduleDeltaHours": 2.21,
       "handoffGapHours": 3.33,
       "overlapHours": 0,
@@ -11969,18 +11969,18 @@
       "cause": "scheduled-window-reset",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-07-05T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-05T05:34:00+12:00",
       "billingDistanceHours": 59.47,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-07T20:39:25.951+12:00",
+          "timestamp": "2026-07-07T20:39:25+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-07T21:42:21.440+12:00",
+          "timestamp": "2026-07-07T21:42:21+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -11998,10 +11998,10 @@
         "gpt-5.6-sol"
       ],
       "planType": "pro",
-      "inferredAt": "2026-07-10T09:49:58.000+12:00",
+      "inferredAt": "2026-07-10T09:49:58+12:00",
       "inferredAtMs": 1783633798000,
-      "previousAdvertisedReset": "2026-07-14T17:02:06.000+12:00",
-      "newAdvertisedReset": "2026-07-17T09:49:58.000+12:00",
+      "previousAdvertisedReset": "2026-07-14T17:02:06+12:00",
+      "newAdvertisedReset": "2026-07-17T09:49:58+12:00",
       "scheduleDeltaHours": -103.2,
       "handoffGapHours": -89.74,
       "overlapHours": 89.74,
@@ -12010,7 +12010,7 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0,
-      "billingAnchor": "2026-07-12T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-12T05:34:00+12:00",
       "billingDistanceHours": 43.73,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-014"
@@ -12025,10 +12025,10 @@
         "gpt-5.6-terra"
       ],
       "planType": "pro",
-      "inferredAt": "2026-07-11T05:58:25.000+12:00",
+      "inferredAt": "2026-07-11T05:58:25+12:00",
       "inferredAtMs": 1783706305000,
-      "previousAdvertisedReset": "2026-07-17T09:49:58.000+12:00",
-      "newAdvertisedReset": "2026-07-18T05:58:25.000+12:00",
+      "previousAdvertisedReset": "2026-07-17T09:49:58+12:00",
+      "newAdvertisedReset": "2026-07-18T05:58:25+12:00",
       "scheduleDeltaHours": -147.86,
       "handoffGapHours": -69.39,
       "overlapHours": 69.39,
@@ -12037,7 +12037,7 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0,
-      "billingAnchor": "2026-07-12T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-12T05:34:00+12:00",
       "billingDistanceHours": 23.59,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-015"
@@ -12052,10 +12052,10 @@
         "unknown"
       ],
       "planType": "pro",
-      "inferredAt": "2026-07-11T18:48:42.000+12:00",
+      "inferredAt": "2026-07-11T18:48:42+12:00",
       "inferredAtMs": 1783752522000,
-      "previousAdvertisedReset": "2026-07-18T05:58:25.000+12:00",
-      "newAdvertisedReset": "2026-07-18T18:48:42.000+12:00",
+      "previousAdvertisedReset": "2026-07-18T05:58:25+12:00",
+      "newAdvertisedReset": "2026-07-18T18:48:42+12:00",
       "scheduleDeltaHours": -155.16,
       "handoffGapHours": -56.92,
       "overlapHours": 56.92,
@@ -12064,7 +12064,7 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0,
-      "billingAnchor": "2026-07-12T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-12T05:34:00+12:00",
       "billingDistanceHours": 10.76,
       "nearbyConversationSignals": [],
       "quotaClaimId": "quota-claim-016"
@@ -12080,10 +12080,10 @@
         "unknown"
       ],
       "planType": "pro",
-      "inferredAt": "2026-07-13T07:06:33.000+12:00",
+      "inferredAt": "2026-07-13T07:06:33+12:00",
       "inferredAtMs": 1783883193000,
-      "previousAdvertisedReset": "2026-07-18T18:48:42.000+12:00",
-      "newAdvertisedReset": "2026-07-20T07:06:33.000+12:00",
+      "previousAdvertisedReset": "2026-07-18T18:48:42+12:00",
+      "newAdvertisedReset": "2026-07-20T07:06:33+12:00",
       "scheduleDeltaHours": -131.7,
       "handoffGapHours": -20.62,
       "overlapHours": 20.62,
@@ -12092,11 +12092,11 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-07-14T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-14T05:34:00+12:00",
       "billingDistanceHours": 22.46,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-14T09:17:49.491+12:00",
+          "timestamp": "2026-07-14T09:17:49+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -12114,10 +12114,10 @@
         "gpt-5.6-terra"
       ],
       "planType": "prolite",
-      "inferredAt": "2026-07-15T08:35:33.000+12:00",
+      "inferredAt": "2026-07-15T08:35:33+12:00",
       "inferredAtMs": 1784061333000,
-      "previousAdvertisedReset": "2026-07-21T21:57:39.000+12:00",
-      "newAdvertisedReset": "2026-07-22T08:35:33.000+12:00",
+      "previousAdvertisedReset": "2026-07-21T21:57:39+12:00",
+      "newAdvertisedReset": "2026-07-22T08:35:33+12:00",
       "scheduleDeltaHours": -157.37,
       "handoffGapHours": 0,
       "overlapHours": 0,
@@ -12126,11 +12126,11 @@
       "cause": "billing-phase-candidate",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-07-14T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-14T05:34:00+12:00",
       "billingDistanceHours": 27.03,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-14T09:17:49.491+12:00",
+          "timestamp": "2026-07-14T09:17:49+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -12149,10 +12149,10 @@
         "unknown"
       ],
       "planType": "prolite",
-      "inferredAt": "2026-07-16T16:54:31.000+12:00",
+      "inferredAt": "2026-07-16T16:54:31+12:00",
       "inferredAtMs": 1784177671000,
-      "previousAdvertisedReset": "2026-07-22T08:35:33.000+12:00",
-      "newAdvertisedReset": "2026-07-23T16:54:31.000+12:00",
+      "previousAdvertisedReset": "2026-07-22T08:35:33+12:00",
+      "newAdvertisedReset": "2026-07-23T16:54:31+12:00",
       "scheduleDeltaHours": -135.68,
       "handoffGapHours": -39.4,
       "overlapHours": 39.4,
@@ -12161,39 +12161,39 @@
       "cause": "competing-schedule-not-a-proven-reset",
       "eventConfidence": 0.54,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-07-14T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-14T05:34:00+12:00",
       "billingDistanceHours": 59.34,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-17T04:40:18.231+12:00",
+          "timestamp": "2026-07-17T04:40:18+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-17T04:40:18.232+12:00",
+          "timestamp": "2026-07-17T04:40:18+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-17T04:41:12.204+12:00",
+          "timestamp": "2026-07-17T04:41:12+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-17T04:41:34.365+12:00",
+          "timestamp": "2026-07-17T04:41:34+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-17T04:41:57.136+12:00",
+          "timestamp": "2026-07-17T04:41:57+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -12212,10 +12212,10 @@
         "gpt-5.6-terra"
       ],
       "planType": "prolite",
-      "inferredAt": "2026-07-18T15:26:23.000+12:00",
+      "inferredAt": "2026-07-18T15:26:23+12:00",
       "inferredAtMs": 1784345183000,
-      "previousAdvertisedReset": "2026-07-25T10:45:09.000+12:00",
-      "newAdvertisedReset": "2026-07-25T15:26:23.000+12:00",
+      "previousAdvertisedReset": "2026-07-25T10:45:09+12:00",
+      "newAdvertisedReset": "2026-07-25T15:26:23+12:00",
       "scheduleDeltaHours": -163.31,
       "handoffGapHours": 1.26,
       "overlapHours": 0,
@@ -12224,39 +12224,39 @@
       "cause": "unknown-system-or-hidden-lane",
       "eventConfidence": 0.88,
       "manualEvidence": 0.12,
-      "billingAnchor": "2026-07-21T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-21T05:34:00+12:00",
       "billingDistanceHours": 62.13,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-18T08:18:24.670+12:00",
+          "timestamp": "2026-07-18T08:18:24+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-18T08:18:24.631+12:00",
+          "timestamp": "2026-07-18T08:18:24+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-18T08:08:09.546+12:00",
+          "timestamp": "2026-07-18T08:08:09+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-18T08:08:09.506+12:00",
+          "timestamp": "2026-07-18T08:08:09+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-18T08:00:58.098+12:00",
+          "timestamp": "2026-07-18T08:00:58+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
@@ -12275,10 +12275,10 @@
         "gpt-5.6-terra"
       ],
       "planType": "prolite",
-      "inferredAt": "2026-07-22T09:19:23.000+12:00",
+      "inferredAt": "2026-07-22T09:19:23+12:00",
       "inferredAtMs": 1784668763000,
-      "previousAdvertisedReset": "2026-07-27T22:36:03.000+12:00",
-      "newAdvertisedReset": "2026-07-29T09:19:23.000+12:00",
+      "previousAdvertisedReset": "2026-07-27T22:36:03+12:00",
+      "newAdvertisedReset": "2026-07-29T09:19:23+12:00",
       "scheduleDeltaHours": -133.28,
       "handoffGapHours": 23.44,
       "overlapHours": 0,
@@ -12287,32 +12287,32 @@
       "cause": "automatic-reset-observed-credit-unchanged",
       "eventConfidence": 0.99,
       "manualEvidence": 0.14,
-      "billingAnchor": "2026-07-21T05:34:00.000+12:00",
+      "billingAnchor": "2026-07-21T05:34:00+12:00",
       "billingDistanceHours": 27.76,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-22T10:46:36.250+12:00",
+          "timestamp": "2026-07-22T10:46:36+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-22T10:46:36.415+12:00",
+          "timestamp": "2026-07-22T10:46:36+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-22T11:19:41.761+12:00",
+          "timestamp": "2026-07-22T11:19:41+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-20T22:35:58.858+12:00",
+          "timestamp": "2026-07-20T22:35:58+12:00",
           "stance": "intention",
           "evidenceWeight": 0.135,
           "imported": true,
@@ -12327,7 +12327,7 @@
       "laneKey": "main|codex|prolite",
       "previousQuotaClaimId": "quota-claim-020",
       "currentQuotaClaimId": "quota-claim-021",
-      "at": "2026-07-18T08:38:35.000+12:00",
+      "at": "2026-07-18T08:38:35+12:00",
       "previousModels": [
         "gpt-5.6-sol",
         "unknown"
@@ -12341,7 +12341,7 @@
       "laneKey": "main|codex|prolite",
       "previousQuotaClaimId": "quota-claim-021",
       "currentQuotaClaimId": "quota-claim-022",
-      "at": "2026-07-18T10:45:09.000+12:00",
+      "at": "2026-07-18T10:45:09+12:00",
       "previousModels": [
         "gpt-5.3-codex-spark"
       ],
@@ -12355,7 +12355,7 @@
       "laneKey": "main|codex|prolite",
       "previousQuotaClaimId": "quota-claim-023",
       "currentQuotaClaimId": "quota-claim-024",
-      "at": "2026-07-20T22:36:03.000+12:00",
+      "at": "2026-07-20T22:36:03+12:00",
       "previousModels": [
         "gpt-5.5",
         "gpt-5.6-sol"
@@ -12369,29 +12369,29 @@
   "phaseFamilies": [
     {
       "id": "phase-01",
-      "anchorAt": "2026-05-24T10:34:39.000+12:00",
-      "confirmedTickAt": "2026-05-31T10:34:39.000+12:00",
+      "anchorAt": "2026-05-24T10:34:39+12:00",
+      "confirmedTickAt": "2026-05-31T10:34:39+12:00",
       "driftHours": 2.02,
       "confidence": 0.88
     },
     {
       "id": "phase-02",
-      "anchorAt": "2026-06-04T13:55:16.000+12:00",
-      "confirmedTickAt": "2026-06-11T13:55:16.000+12:00",
+      "anchorAt": "2026-06-04T13:55:16+12:00",
+      "confirmedTickAt": "2026-06-11T13:55:16+12:00",
       "driftHours": 0.01,
       "confidence": 0.88
     },
     {
       "id": "phase-03",
-      "anchorAt": "2026-06-18T13:01:03.000+12:00",
-      "confirmedTickAt": "2026-06-25T13:01:03.000+12:00",
+      "anchorAt": "2026-06-18T13:01:03+12:00",
+      "confirmedTickAt": "2026-06-25T13:01:03+12:00",
       "driftHours": 3.01,
       "confidence": 0.88
     },
     {
       "id": "phase-04",
-      "anchorAt": "2026-06-30T17:02:06.000+12:00",
-      "confirmedTickAt": "2026-07-07T17:02:06.000+12:00",
+      "anchorAt": "2026-06-30T17:02:06+12:00",
+      "confirmedTickAt": "2026-07-07T17:02:06+12:00",
       "driftHours": 2.21,
       "confidence": 0.88
     }
@@ -12399,99 +12399,99 @@
   "billingAnchors": [
     {
       "timestampMs": 1778693640000,
-      "timestamp": "2026-05-14T05:34:00.000+12:00",
+      "timestamp": "2026-05-14T05:34:00+12:00",
       "type": "billing-month",
-      "monthStart": "2026-05-14T05:34:00.000+12:00"
+      "monthStart": "2026-05-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1779298440000,
-      "timestamp": "2026-05-21T05:34:00.000+12:00",
+      "timestamp": "2026-05-21T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-05-14T05:34:00.000+12:00"
+      "monthStart": "2026-05-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1779903240000,
-      "timestamp": "2026-05-28T05:34:00.000+12:00",
+      "timestamp": "2026-05-28T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-05-14T05:34:00.000+12:00"
+      "monthStart": "2026-05-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1780508040000,
-      "timestamp": "2026-06-04T05:34:00.000+12:00",
+      "timestamp": "2026-06-04T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-05-14T05:34:00.000+12:00"
+      "monthStart": "2026-05-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1781112840000,
-      "timestamp": "2026-06-11T05:34:00.000+12:00",
+      "timestamp": "2026-06-11T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-05-14T05:34:00.000+12:00"
+      "monthStart": "2026-05-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1781372040000,
-      "timestamp": "2026-06-14T05:34:00.000+12:00",
+      "timestamp": "2026-06-14T05:34:00+12:00",
       "type": "billing-month",
-      "monthStart": "2026-06-14T05:34:00.000+12:00"
+      "monthStart": "2026-06-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1781976840000,
-      "timestamp": "2026-06-21T05:34:00.000+12:00",
+      "timestamp": "2026-06-21T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-06-14T05:34:00.000+12:00"
+      "monthStart": "2026-06-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1782581640000,
-      "timestamp": "2026-06-28T05:34:00.000+12:00",
+      "timestamp": "2026-06-28T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-06-14T05:34:00.000+12:00"
+      "monthStart": "2026-06-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1783186440000,
-      "timestamp": "2026-07-05T05:34:00.000+12:00",
+      "timestamp": "2026-07-05T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-06-14T05:34:00.000+12:00"
+      "monthStart": "2026-06-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1783791240000,
-      "timestamp": "2026-07-12T05:34:00.000+12:00",
+      "timestamp": "2026-07-12T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-06-14T05:34:00.000+12:00"
+      "monthStart": "2026-06-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1783964040000,
-      "timestamp": "2026-07-14T05:34:00.000+12:00",
+      "timestamp": "2026-07-14T05:34:00+12:00",
       "type": "billing-month",
-      "monthStart": "2026-07-14T05:34:00.000+12:00"
+      "monthStart": "2026-07-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1784568840000,
-      "timestamp": "2026-07-21T05:34:00.000+12:00",
+      "timestamp": "2026-07-21T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-07-14T05:34:00.000+12:00"
+      "monthStart": "2026-07-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1785173640000,
-      "timestamp": "2026-07-28T05:34:00.000+12:00",
+      "timestamp": "2026-07-28T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-07-14T05:34:00.000+12:00"
+      "monthStart": "2026-07-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1785778440000,
-      "timestamp": "2026-08-04T05:34:00.000+12:00",
+      "timestamp": "2026-08-04T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-07-14T05:34:00.000+12:00"
+      "monthStart": "2026-07-14T05:34:00+12:00"
     },
     {
       "timestampMs": 1786383240000,
-      "timestamp": "2026-08-11T05:34:00.000+12:00",
+      "timestamp": "2026-08-11T05:34:00+12:00",
       "type": "billing-week",
-      "monthStart": "2026-07-14T05:34:00.000+12:00"
+      "monthStart": "2026-07-14T05:34:00+12:00"
     }
   ],
   "predictions": {
     "candidates": [
       {
-        "timestamp": "2026-07-23T13:01:03.000+12:00",
+        "timestamp": "2026-07-23T13:01:03+12:00",
         "timestampMs": 1784768463000,
         "score": 0.282,
         "confidence": "watch",
@@ -12500,13 +12500,13 @@
           {
             "type": "confirmed-phase-projection",
             "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-06-25T13:01:03.000+12:00",
+            "basis": "confirmed tick 2026-06-25T13:01:03+12:00",
             "score": 0.282
           }
         ]
       },
       {
-        "timestamp": "2026-07-23T13:55:16.000+12:00",
+        "timestamp": "2026-07-23T13:55:16+12:00",
         "timestampMs": 1784771716000,
         "score": 0.282,
         "confidence": "watch",
@@ -12515,15 +12515,15 @@
           {
             "type": "confirmed-phase-projection",
             "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-06-11T13:55:16.000+12:00",
+            "basis": "confirmed tick 2026-06-11T13:55:16+12:00",
             "score": 0.282
           }
         ]
       },
       {
-        "timestamp": "2026-07-23T16:54:31.000+12:00",
+        "timestamp": "2026-07-23T16:54:31+12:00",
         "timestampMs": 1784782471000,
-        "score": 0.164,
+        "score": 0.163,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12531,12 +12531,12 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "42730 snapshots across 2 model source(s), last observed 18 Jul 2026, 08:29",
-            "score": 0.164
+            "score": 0.163
           }
         ]
       },
       {
-        "timestamp": "2026-07-25T08:38:35.000+12:00",
+        "timestamp": "2026-07-25T08:38:35+12:00",
         "timestampMs": 1784925515000,
         "score": 0.166,
         "confidence": "watch",
@@ -12551,9 +12551,9 @@
         ]
       },
       {
-        "timestamp": "2026-07-25T10:45:09.000+12:00",
+        "timestamp": "2026-07-25T10:45:09+12:00",
         "timestampMs": 1784933109000,
-        "score": 0.171,
+        "score": 0.17,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12561,14 +12561,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "503 snapshots across 2 model source(s), last observed 18 Jul 2026, 14:10",
-            "score": 0.171
+            "score": 0.17
           }
         ]
       },
       {
-        "timestamp": "2026-07-25T15:26:23.000+12:00",
+        "timestamp": "2026-07-25T15:26:23+12:00",
         "timestampMs": 1784949983000,
-        "score": 0.346,
+        "score": 0.345,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12576,12 +12576,12 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "4970 snapshots across 2 model source(s), last observed 22 Jul 2026, 11:19",
-            "score": 0.346
+            "score": 0.345
           }
         ]
       },
       {
-        "timestamp": "2026-07-26T10:34:39.000+12:00",
+        "timestamp": "2026-07-26T10:34:39+12:00",
         "timestampMs": 1785018879000,
         "score": 0.282,
         "confidence": "watch",
@@ -12590,15 +12590,15 @@
           {
             "type": "confirmed-phase-projection",
             "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-05-31T10:34:39.000+12:00",
+            "basis": "confirmed tick 2026-05-31T10:34:39+12:00",
             "score": 0.282
           }
         ]
       },
       {
-        "timestamp": "2026-07-27T22:36:03.000+12:00",
+        "timestamp": "2026-07-27T22:36:03+12:00",
         "timestampMs": 1785148563000,
-        "score": 0.286,
+        "score": 0.285,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12606,12 +12606,12 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "182 snapshots across 1 model source(s), last observed 21 Jul 2026, 10:02",
-            "score": 0.286
+            "score": 0.285
           }
         ]
       },
       {
-        "timestamp": "2026-07-28T05:34:00.000+12:00",
+        "timestamp": "2026-07-28T05:34:00+12:00",
         "timestampMs": 1785173640000,
         "score": 0.34,
         "confidence": "watch",
@@ -12626,7 +12626,7 @@
         ]
       },
       {
-        "timestamp": "2026-07-28T17:02:06.000+12:00",
+        "timestamp": "2026-07-28T17:02:06+12:00",
         "timestampMs": 1785214926000,
         "score": 0.282,
         "confidence": "watch",
@@ -12635,13 +12635,13 @@
           {
             "type": "confirmed-phase-projection",
             "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-07-07T17:02:06.000+12:00",
+            "basis": "confirmed tick 2026-07-07T17:02:06+12:00",
             "score": 0.282
           }
         ]
       },
       {
-        "timestamp": "2026-07-29T09:19:23.000+12:00",
+        "timestamp": "2026-07-29T09:19:23+12:00",
         "timestampMs": 1785273563000,
         "score": 0.92,
         "confidence": "high",
@@ -12662,7 +12662,7 @@
         ]
       },
       {
-        "timestamp": "2026-08-04T05:34:00.000+12:00",
+        "timestamp": "2026-08-04T05:34:00+12:00",
         "timestampMs": 1785778440000,
         "score": 0.34,
         "confidence": "watch",
@@ -12678,7 +12678,7 @@
       }
     ],
     "mostLikely": {
-      "timestamp": "2026-07-29T09:19:23.000+12:00",
+      "timestamp": "2026-07-29T09:19:23+12:00",
       "timestampMs": 1785273563000,
       "score": 0.92,
       "confidence": "high",
@@ -12699,7 +12699,7 @@
       ]
     },
     "earliestCredible": {
-      "timestamp": "2026-07-23T13:01:03.000+12:00",
+      "timestamp": "2026-07-23T13:01:03+12:00",
       "timestampMs": 1784768463000,
       "score": 0.282,
       "confidence": "watch",
@@ -12708,7 +12708,7 @@
         {
           "type": "confirmed-phase-projection",
           "label": "Historical phase continuation",
-          "basis": "confirmed tick 2026-06-25T13:01:03.000+12:00",
+          "basis": "confirmed tick 2026-06-25T13:01:03+12:00",
           "score": 0.282
         }
       ]
@@ -12720,12 +12720,12 @@
     "currentUsedPercent": 71,
     "remainingPercent": 29,
     "targetRemainingPercent": 18,
-    "elapsedWindowHours": 21.7,
-    "averageBurnPercentPerHour": 3.27,
-    "runwayHoursAtCurrentPace": 8.9,
+    "elapsedWindowHours": 22.1,
+    "averageBurnPercentPerHour": 3.22,
+    "runwayHoursAtCurrentPace": 9,
     "localTokensSinceReset": 83921326,
-    "hoursToEarliestCredibleReset": 6,
-    "hoursToCurrentBackendReset": 146.3,
+    "hoursToEarliestCredibleReset": 5.6,
+    "hoursToCurrentBackendReset": 145.9,
     "rationale": [
       "29% of the main weekly allowance remains.",
       "Earliest credible surprise reset is 23 Jul 2026, 13:01 at 28% model confidence.",

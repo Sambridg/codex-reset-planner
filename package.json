@@ -6,6 +6,7 @@
   "scripts": {
     "build:forensics": "node work/build-reset-forensics.mjs",
     "build:planner": "node work/build-reset-planner.mjs",
-    "build": "npm run build:forensics && npm run build:planner"
+    "build": "npm run build:forensics && npm run build:planner",
+    "test": "node --test"
   }
 }

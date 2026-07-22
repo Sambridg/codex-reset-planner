@@ -1,6 +1,6 @@
 # Codex Reset and Usage Forensics
 
-Generated: 23 Jul 2026, 07:00:21
+Generated: 23 Jul 2026, 07:23:35
 
 ## Operational answer
 
@@ -63,7 +63,7 @@ June 14 does not show a clean universal main reset: the dominant main claim cont
 | 25 Jul 2026, 10:45 | 17% | watch | Main-lane retained deadline |
 | 25 Jul 2026, 15:26 | 35% | watch | Main-lane retained deadline |
 | 26 Jul 2026, 10:34 | 28% | watch | Historical phase continuation |
-| 27 Jul 2026, 22:36 | 29% | watch | Main-lane retained deadline |
+| 27 Jul 2026, 22:36 | 28% | watch | Main-lane retained deadline |
 | 28 Jul 2026, 05:34 | 34% | watch | Billing-week anchor |
 | 28 Jul 2026, 17:02 | 28% | watch | Historical phase continuation |
 | 29 Jul 2026, 09:19 | 92% | high | Current backend deadline; Main-lane retained deadline |
@@ -89,7 +89,7 @@ Prospectively, manual attribution can be made deterministic by recording the res
 ## Evidence and limitations
 
 - Source period: 22 May 2026, 00:00 through 23 Jul 2026, 00:00.
-- Rollout files: 673; bytes scanned: 3,180,667,495.
+- Rollout files: 673; bytes scanned: 3,180,859,491.
 - Token events: 130,523; hourly buckets: 650.
 - Conversation signals: 245; imported and retrospective clues receive sharply reduced weight. Raw excerpts and session identifiers are not published.
 - Multiple historical sessions can report conflicting deadlines for the same quota lane. Model identity is ignored for reset inference, and model-only handoffs are excluded.
