@@ -1,10 +1,17 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { billingCycleBounds, claimStartsInCurrentBillingCycle, projectWeeklyPhaseWithinBillingCycle } from "../work/lib/billing-cycle.mjs";
 import { isModelOnlyHandoff, quotaLaneKey, sharedObservationModels } from "../work/lib/reset-evidence.mjs";
 import { sanitizePublicData } from "../work/lib/public-data.mjs";
 import { zonedDate, zonedHour, zonedIso } from "../work/lib/time.mjs";
 
 const NZ = "Pacific/Auckland";
+const WEEK = 7 * 24 * 60 * 60 * 1000;
+const CYCLES = [
+  Date.parse("2026-06-14T05:34:00+12:00"),
+  Date.parse("2026-07-14T05:34:00+12:00"),
+  Date.parse("2026-08-14T05:34:00+12:00"),
+];
 
 test("Pacific/Auckland serialization follows winter and daylight-saving offsets", () => {
   assert.equal(zonedIso(Date.parse("2026-07-21T21:19:23Z"), NZ), "2026-07-22T09:19:23+12:00");
@@ -36,4 +43,20 @@ test("public data strips raw conversation and event excerpts", () => {
   assert.equal("nearbyConversations" in sanitized.events[0], false);
   assert.equal(JSON.stringify(sanitized).includes("private"), false);
   assert.deepEqual(Object.keys(sanitized.events[0].nearbyConversationSignals[0]).sort(), ["evidenceWeight", "imported", "retrospective", "stance", "timestamp"]);
+});
+
+test("weekly phase projections cannot cross a billing-cycle boundary", () => {
+  const juneTick = Date.parse("2026-06-25T13:01:03+12:00");
+  const julyNow = Date.parse("2026-07-23T12:00:00+12:00");
+  assert.equal(projectWeeklyPhaseWithinBillingCycle(juneTick, julyNow, WEEK, CYCLES), null);
+
+  const julyTick = Date.parse("2026-07-15T08:35:00+12:00");
+  assert.equal(projectWeeklyPhaseWithinBillingCycle(julyTick, julyNow, WEEK, CYCLES), Date.parse("2026-07-29T08:35:00+12:00"));
+});
+
+test("retained claims must originate inside the current billing cycle", () => {
+  const now = Date.parse("2026-07-23T12:00:00+12:00");
+  assert.deepEqual(billingCycleBounds(now, CYCLES), { startAtMs: CYCLES[1], endAtMs: CYCLES[2] });
+  assert.equal(claimStartsInCurrentBillingCycle(Date.parse("2026-07-13T23:00:00+12:00"), now, CYCLES), false);
+  assert.equal(claimStartsInCurrentBillingCycle(Date.parse("2026-07-15T08:35:00+12:00"), now, CYCLES), true);
 });

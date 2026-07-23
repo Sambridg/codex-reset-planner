@@ -307,7 +307,7 @@ const template = String.raw`<!doctype html>
               <div class="finding good"><strong>Phase shifts are real</strong><span>Locked seven-day deadlines changed before earlier advertised deadlines and sometimes propagated for another week.</span></div>
               <div class="finding warn"><strong>Manual cause is not logged</strong><span>Conversation wording is only corroboration. Credit inventory changes are needed for deterministic attribution.</span></div>
               <div class="finding"><strong>Spark is separate</strong><span>GPT-5.3-Codex-Spark reports through its own current limit ID and must not be merged with main.</span></div>
-              <div class="finding warn"><strong>Billing sync is unproven</strong><span>The 14th-cycle theory remains a candidate. June 14 did not produce one clean universal reset across observed lanes.</span></div>
+              <div class="finding good"><strong>Billing boundary enforced</strong><span>Retained claims and weekly phase continuations expire on the next 14th. Earlier-cycle phases cannot generate current-cycle predictions.</span></div>
             </div>
           </article>
         </div>
@@ -406,7 +406,7 @@ const template = String.raw`<!doctype html>
         <div class="spacer"></div>
         <div class="grid-2">
           <article class="card"><h3>What is directly observed</h3><p class="section-note">Official daily token totals; exact local model-call timestamps; quota limit identity; advertised reset timestamps captured in rate-limit snapshots; current main and Spark meters; current reset-credit inventory.</p></article>
-          <article class="card"><h3>What remains inferred</h3><p class="section-note">The cause of historical phase shifts; whether a retained stale timer can still fire; whether the billing cycle forces a universal re-sync; historical reset-credit redemption without before/after inventory snapshots.</p></article>
+          <article class="card"><h3>What remains inferred</h3><p class="section-note">The cause of historical phase shifts; whether a retained timer from the current billing cycle can still fire; whether the billing boundary itself forces a reset; historical reset-credit redemption without before/after inventory snapshots.</p></article>
         </div>
       </section>
     </main>

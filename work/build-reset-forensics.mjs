@@ -2,6 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import readline from "node:readline";
+import { billingCycleBounds, claimStartsInCurrentBillingCycle, projectWeeklyPhaseWithinBillingCycle } from "./lib/billing-cycle.mjs";
 import { quotaLaneKey, sharedObservationModels } from "./lib/reset-evidence.mjs";
 import { zonedDate, zonedHour, zonedIso } from "./lib/time.mjs";
 
@@ -13,6 +14,13 @@ const RANGE_END_MS = Date.parse("2026-07-22T12:00:00Z");
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 const HOUR_MS = 60 * 60 * 1000;
 const NZ_TIMEZONE = "Pacific/Auckland";
+const BILLING_CYCLE_STARTS = [
+  Date.parse("2026-05-14T05:34:00+12:00"),
+  Date.parse("2026-06-14T05:34:00+12:00"),
+  Date.parse("2026-07-14T05:34:00+12:00"),
+  Date.parse("2026-08-14T05:34:00+12:00"),
+  Date.parse("2026-09-14T05:34:00+12:00"),
+];
 const CURRENT_THREAD_ID = process.env.CURRENT_THREAD_ID || "";
 
 function envNumber(name, fallback) {
@@ -555,16 +563,10 @@ function buildQuotaClaims(claims) {
 }
 
 function buildBillingAnchors() {
-  const monthlyStarts = [
-    Date.parse("2026-05-13T17:34:00Z"),
-    Date.parse("2026-06-13T17:34:00Z"),
-    Date.parse("2026-07-13T17:34:00Z"),
-    Date.parse("2026-08-13T17:34:00Z"),
-  ];
   const anchors = [];
-  for (let monthIndex = 0; monthIndex < monthlyStarts.length - 1; monthIndex += 1) {
-    const monthStart = monthlyStarts[monthIndex];
-    const nextMonth = monthlyStarts[monthIndex + 1];
+  for (let monthIndex = 0; monthIndex < BILLING_CYCLE_STARTS.length - 1; monthIndex += 1) {
+    const monthStart = BILLING_CYCLE_STARTS[monthIndex];
+    const nextMonth = BILLING_CYCLE_STARTS[monthIndex + 1];
     for (let tick = monthStart; tick < nextMonth; tick += WEEK_MS) {
       anchors.push({
         timestampMs: tick,
@@ -706,13 +708,18 @@ function buildInferredEvents(claims, conversations, billingAnchors) {
 
 function buildPhaseFamilies(events) {
   const scheduled = events.filter((event) => event.timingClass === "on-schedule" && !event.competing);
-  return scheduled.map((event, index) => ({
-    id: `phase-${String(index + 1).padStart(2, "0")}`,
-    anchorAt: nzIso(event.inferredAtMs - WEEK_MS),
-    confirmedTickAt: event.inferredAt,
-    driftHours: Math.abs(event.scheduleDeltaHours),
-    confidence: event.eventConfidence,
-  }));
+  return scheduled.map((event, index) => {
+    const cycle = billingCycleBounds(event.inferredAtMs, BILLING_CYCLE_STARTS);
+    return {
+      id: `phase-${String(index + 1).padStart(2, "0")}`,
+      anchorAt: nzIso(event.inferredAtMs - WEEK_MS),
+      confirmedTickAt: event.inferredAt,
+      driftHours: Math.abs(event.scheduleDeltaHours),
+      confidence: event.eventConfidence,
+      billingCycleStartAt: cycle.startAtMs == null ? null : nzIso(cycle.startAtMs),
+      billingCycleEndAt: cycle.endAtMs == null ? null : nzIso(cycle.endAtMs),
+    };
+  });
 }
 
 function buildPredictions(claims, billingAnchors, phaseFamilies, nowMs) {
@@ -732,6 +739,7 @@ function buildPredictions(claims, billingAnchors, phaseFamilies, nowMs) {
 
   for (const claim of claims) {
     if (claim.logicalLane !== "main" || claim.resetAtMs <= nowMs) continue;
+    if (!claimStartsInCurrentBillingCycle(claim.startAtMs, nowMs, BILLING_CYCLE_STARTS)) continue;
     const ageDays = Math.max(0, (nowMs - claim.lastObservedAtMs) / (24 * HOUR_MS));
     const recency = Math.exp(-ageDays / 5.5);
     let score = claim.confidenceScore * recency * 0.72;
@@ -759,8 +767,8 @@ function buildPredictions(claims, billingAnchors, phaseFamilies, nowMs) {
   }
 
   for (const phase of phaseFamilies) {
-    let tick = Date.parse(phase.confirmedTickAt) + WEEK_MS;
-    while (tick <= nowMs) tick += WEEK_MS;
+    const tick = projectWeeklyPhaseWithinBillingCycle(Date.parse(phase.confirmedTickAt), nowMs, WEEK_MS, BILLING_CYCLE_STARTS);
+    if (tick == null) continue;
     add({
       timestampMs: tick,
       type: "confirmed-phase-projection",
@@ -892,6 +900,7 @@ function buildReport(data) {
 `## Executive findings\n\n` +
 `- Historical schedule claims are recoverable at quota-lane granularity. ${data.quotaClaims.length} quota-window claims were reconstructed from ${data.claims.length} model observations and ${data.source.rateSnapshots.toLocaleString("en-NZ")} rate snapshots.\n` +
 `- ${data.ignoredModelOnlyHandoffs.length} model-only handoffs were deliberately excluded from reset inference. A model change is not a reset event.\n` +
+`- Weekly phase continuations and retained schedule claims expire at the next 14th-of-month billing boundary. No June phase is projected into the billing cycle that began on 14 July.\n` +
 `- ${scheduledEvents.length} clean main-lane transitions followed a prior deadline within six hours. This confirms that an offset reset can establish a real seven-day phase for at least one following cycle.\n` +
 `- ${earlyEvents.length} clean main-lane transitions occurred materially before the previously advertised deadline. Their existence is confirmed; manual versus automatic cause is usually not recorded.\n` +
 `- Conversation statements are corroborating evidence only. Plans, refusals, and retrospective discussion are never treated as proof that a reset occurred.\n` +
@@ -904,7 +913,7 @@ function buildReport(data) {
 `## Reset-event ledger\n\n` +
 markdownTable(["Inferred event", "Timing", "Prior deadline", "New deadline", "Delta", "Confidence", "Cause"], eventRows) + "\n\n" +
 `## Billing-cycle hypothesis\n\n` +
-`Billing-week anchors were generated from the surviving reset credit granted on 14 July at 05:34 NZ and projected at seven-day intervals inside each billing month. Events within 36 hours are marked as billing candidates, not confirmations.\n\n` +
+`Billing-week anchors are projected at seven-day intervals inside each 14th-to-14th billing cycle. Historical phase chains and retained claims are clipped at the next billing boundary. This is a prediction-scope rule; whether the boundary itself triggers a reset remains a separate hypothesis. Events within 36 hours are marked as billing candidates, not confirmations.\n\n` +
 `June 14 does not show a clean universal main reset: the dominant main claim continued to advertise June 18. July 14 contains several competing quota-schedule observations. The July 22 event is consistent with a July 21 billing-week anchor after an idle/first-use delay, but retained session schedules remain a competing explanation.\n\n` +
 `## Current prediction candidates\n\n` +
 markdownTable(["Candidate", "Score", "Band", "Evidence"], predictionRows) + "\n\n" +
@@ -977,6 +986,11 @@ async function main() {
     quotaClaims,
     events,
     ignoredModelOnlyHandoffs: eventBuild.ignoredModelOnlyHandoffs,
+    predictionRules: {
+      billingCycleDay: 14,
+      phaseContinuationsCrossBillingBoundary: false,
+      retainedClaimsMustStartInCurrentBillingCycle: true,
+    },
     phaseFamilies,
     billingAnchors,
     predictions,

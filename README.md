@@ -10,6 +10,10 @@ Reset events are reconstructed by quota lane, using the backend limit ID and pla
 
 Spark is shown separately only when the backend reports the separate `codex_bengalfox` limit ID.
 
+## Billing-cycle boundary
+
+The prediction model treats each 14th-to-14th billing cycle as a hard scope boundary. Weekly phases and retained claims originating before the current billing cycle cannot generate predictions inside the new cycle. This does not independently claim that the billing boundary itself triggers a reset; that remains a separately scored hypothesis.
+
 ## Public app
 
 GitHub Pages serves the sanitized static app from `docs/`:

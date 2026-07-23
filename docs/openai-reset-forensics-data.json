@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-23T07:23:35+12:00",
+  "generatedAt": "2026-07-23T16:14:17+12:00",
   "timezone": "Pacific/Auckland",
   "account": {
-    "capturedAt": "2026-07-23T07:22:41.1520482+12:00",
+    "capturedAt": "2026-07-23T16:13:59.0413131+12:00",
     "accountType": "chatgpt",
     "planType": "pro",
     "lifetimeTokens": 19811078874,
@@ -11,7 +11,7 @@
     "currentStreakDays": 180,
     "main": {
       "limitId": "codex",
-      "usedPercent": 71,
+      "usedPercent": 72,
       "windowMinutes": 10080,
       "resetsAt": 1785273563,
       "windowStart": "2026-07-22T09:19:23+12:00",
@@ -44,7 +44,7 @@
   },
   "source": {
     "files": 673,
-    "bytes": 3180859491,
+    "bytes": 3181446552,
     "tokenEvents": 130523,
     "turnContexts": 7097,
     "malformedLines": 0,
@@ -12366,34 +12366,47 @@
       "reason": "model-only-handoff"
     }
   ],
+  "predictionRules": {
+    "billingCycleDay": 14,
+    "phaseContinuationsCrossBillingBoundary": false,
+    "retainedClaimsMustStartInCurrentBillingCycle": true
+  },
   "phaseFamilies": [
     {
       "id": "phase-01",
       "anchorAt": "2026-05-24T10:34:39+12:00",
       "confirmedTickAt": "2026-05-31T10:34:39+12:00",
       "driftHours": 2.02,
-      "confidence": 0.88
+      "confidence": 0.88,
+      "billingCycleStartAt": "2026-05-14T05:34:00+12:00",
+      "billingCycleEndAt": "2026-06-14T05:34:00+12:00"
     },
     {
       "id": "phase-02",
       "anchorAt": "2026-06-04T13:55:16+12:00",
       "confirmedTickAt": "2026-06-11T13:55:16+12:00",
       "driftHours": 0.01,
-      "confidence": 0.88
+      "confidence": 0.88,
+      "billingCycleStartAt": "2026-05-14T05:34:00+12:00",
+      "billingCycleEndAt": "2026-06-14T05:34:00+12:00"
     },
     {
       "id": "phase-03",
       "anchorAt": "2026-06-18T13:01:03+12:00",
       "confirmedTickAt": "2026-06-25T13:01:03+12:00",
       "driftHours": 3.01,
-      "confidence": 0.88
+      "confidence": 0.88,
+      "billingCycleStartAt": "2026-06-14T05:34:00+12:00",
+      "billingCycleEndAt": "2026-07-14T05:34:00+12:00"
     },
     {
       "id": "phase-04",
       "anchorAt": "2026-06-30T17:02:06+12:00",
       "confirmedTickAt": "2026-07-07T17:02:06+12:00",
       "driftHours": 2.21,
-      "confidence": 0.88
+      "confidence": 0.88,
+      "billingCycleStartAt": "2026-06-14T05:34:00+12:00",
+      "billingCycleEndAt": "2026-07-14T05:34:00+12:00"
     }
   ],
   "billingAnchors": [
@@ -12486,44 +12499,44 @@
       "timestamp": "2026-08-11T05:34:00+12:00",
       "type": "billing-week",
       "monthStart": "2026-07-14T05:34:00+12:00"
+    },
+    {
+      "timestampMs": 1786642440000,
+      "timestamp": "2026-08-14T05:34:00+12:00",
+      "type": "billing-month",
+      "monthStart": "2026-08-14T05:34:00+12:00"
+    },
+    {
+      "timestampMs": 1787247240000,
+      "timestamp": "2026-08-21T05:34:00+12:00",
+      "type": "billing-week",
+      "monthStart": "2026-08-14T05:34:00+12:00"
+    },
+    {
+      "timestampMs": 1787852040000,
+      "timestamp": "2026-08-28T05:34:00+12:00",
+      "type": "billing-week",
+      "monthStart": "2026-08-14T05:34:00+12:00"
+    },
+    {
+      "timestampMs": 1788456840000,
+      "timestamp": "2026-09-04T05:34:00+12:00",
+      "type": "billing-week",
+      "monthStart": "2026-08-14T05:34:00+12:00"
+    },
+    {
+      "timestampMs": 1789061640000,
+      "timestamp": "2026-09-11T05:34:00+12:00",
+      "type": "billing-week",
+      "monthStart": "2026-08-14T05:34:00+12:00"
     }
   ],
   "predictions": {
     "candidates": [
       {
-        "timestamp": "2026-07-23T13:01:03+12:00",
-        "timestampMs": 1784768463000,
-        "score": 0.282,
-        "confidence": "watch",
-        "label": "Historical phase continuation",
-        "evidence": [
-          {
-            "type": "confirmed-phase-projection",
-            "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-06-25T13:01:03+12:00",
-            "score": 0.282
-          }
-        ]
-      },
-      {
-        "timestamp": "2026-07-23T13:55:16+12:00",
-        "timestampMs": 1784771716000,
-        "score": 0.282,
-        "confidence": "watch",
-        "label": "Historical phase continuation",
-        "evidence": [
-          {
-            "type": "confirmed-phase-projection",
-            "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-06-11T13:55:16+12:00",
-            "score": 0.282
-          }
-        ]
-      },
-      {
         "timestamp": "2026-07-23T16:54:31+12:00",
         "timestampMs": 1784782471000,
-        "score": 0.163,
+        "score": 0.153,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12531,14 +12544,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "42730 snapshots across 2 model source(s), last observed 18 Jul 2026, 08:29",
-            "score": 0.163
+            "score": 0.153
           }
         ]
       },
       {
         "timestamp": "2026-07-25T08:38:35+12:00",
         "timestampMs": 1784925515000,
-        "score": 0.166,
+        "score": 0.155,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12546,14 +12559,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "35 snapshots across 1 model source(s), last observed 18 Jul 2026, 10:41",
-            "score": 0.166
+            "score": 0.155
           }
         ]
       },
       {
         "timestamp": "2026-07-25T10:45:09+12:00",
         "timestampMs": 1784933109000,
-        "score": 0.17,
+        "score": 0.159,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12561,14 +12574,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "503 snapshots across 2 model source(s), last observed 18 Jul 2026, 14:10",
-            "score": 0.17
+            "score": 0.159
           }
         ]
       },
       {
         "timestamp": "2026-07-25T15:26:23+12:00",
         "timestampMs": 1784949983000,
-        "score": 0.345,
+        "score": 0.323,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12576,29 +12589,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "4970 snapshots across 2 model source(s), last observed 22 Jul 2026, 11:19",
-            "score": 0.345
-          }
-        ]
-      },
-      {
-        "timestamp": "2026-07-26T10:34:39+12:00",
-        "timestampMs": 1785018879000,
-        "score": 0.282,
-        "confidence": "watch",
-        "label": "Historical phase continuation",
-        "evidence": [
-          {
-            "type": "confirmed-phase-projection",
-            "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-05-31T10:34:39+12:00",
-            "score": 0.282
+            "score": 0.323
           }
         ]
       },
       {
         "timestamp": "2026-07-27T22:36:03+12:00",
         "timestampMs": 1785148563000,
-        "score": 0.285,
+        "score": 0.266,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12606,7 +12604,7 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "182 snapshots across 1 model source(s), last observed 21 Jul 2026, 10:02",
-            "score": 0.285
+            "score": 0.266
           }
         ]
       },
@@ -12622,21 +12620,6 @@
             "label": "Billing-week anchor",
             "basis": "14th-of-month hypothesis",
             "score": 0.34
-          }
-        ]
-      },
-      {
-        "timestamp": "2026-07-28T17:02:06+12:00",
-        "timestampMs": 1785214926000,
-        "score": 0.282,
-        "confidence": "watch",
-        "label": "Historical phase continuation",
-        "evidence": [
-          {
-            "type": "confirmed-phase-projection",
-            "label": "Historical phase continuation",
-            "basis": "confirmed tick 2026-07-07T17:02:06+12:00",
-            "score": 0.282
           }
         ]
       },
@@ -12699,17 +12682,17 @@
       ]
     },
     "earliestCredible": {
-      "timestamp": "2026-07-23T13:01:03+12:00",
-      "timestampMs": 1784768463000,
-      "score": 0.282,
+      "timestamp": "2026-07-25T15:26:23+12:00",
+      "timestampMs": 1784949983000,
+      "score": 0.323,
       "confidence": "watch",
-      "label": "Historical phase continuation",
+      "label": "Main-lane retained deadline",
       "evidence": [
         {
-          "type": "confirmed-phase-projection",
-          "label": "Historical phase continuation",
-          "basis": "confirmed tick 2026-06-25T13:01:03+12:00",
-          "score": 0.282
+          "type": "retained-schedule-candidate",
+          "label": "Main-lane retained deadline",
+          "basis": "4970 snapshots across 2 model source(s), last observed 22 Jul 2026, 11:19",
+          "score": 0.323
         }
       ]
     }
@@ -12717,18 +12700,18 @@
   "guidance": {
     "action": "EASE OFF",
     "headline": "Reserve capacity for high-value actions until the next credible reset.",
-    "currentUsedPercent": 71,
-    "remainingPercent": 29,
+    "currentUsedPercent": 72,
+    "remainingPercent": 28,
     "targetRemainingPercent": 18,
-    "elapsedWindowHours": 22.1,
-    "averageBurnPercentPerHour": 3.22,
-    "runwayHoursAtCurrentPace": 9,
+    "elapsedWindowHours": 30.9,
+    "averageBurnPercentPerHour": 2.33,
+    "runwayHoursAtCurrentPace": 12,
     "localTokensSinceReset": 83921326,
-    "hoursToEarliestCredibleReset": 5.6,
-    "hoursToCurrentBackendReset": 145.9,
+    "hoursToEarliestCredibleReset": 47.2,
+    "hoursToCurrentBackendReset": 137.1,
     "rationale": [
-      "29% of the main weekly allowance remains.",
-      "Earliest credible surprise reset is 23 Jul 2026, 13:01 at 28% model confidence.",
+      "28% of the main weekly allowance remains.",
+      "Earliest credible surprise reset is 25 Jul 2026, 15:26 at 32% model confidence.",
       "The current backend deadline is 29 Jul 2026, 09:19.",
       "Conversation intent is used only as weak corroboration; it never confirms a button press by itself."
     ]
