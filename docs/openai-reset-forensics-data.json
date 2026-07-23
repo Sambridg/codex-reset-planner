@@ -1,9 +1,9 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-07-23T16:14:17+12:00",
+  "schemaVersion": 3,
+  "generatedAt": "2026-07-23T17:13:51+12:00",
   "timezone": "Pacific/Auckland",
   "account": {
-    "capturedAt": "2026-07-23T16:13:59.0413131+12:00",
+    "capturedAt": "2026-07-23T17:13:33.1188100+12:00",
     "accountType": "chatgpt",
     "planType": "pro",
     "lifetimeTokens": 19811078874,
@@ -11,7 +11,7 @@
     "currentStreakDays": 180,
     "main": {
       "limitId": "codex",
-      "usedPercent": 72,
+      "usedPercent": 73,
       "windowMinutes": 10080,
       "resetsAt": 1785273563,
       "windowStart": "2026-07-22T09:19:23+12:00",
@@ -44,7 +44,7 @@
   },
   "source": {
     "files": 673,
-    "bytes": 3181446552,
+    "bytes": 3182224032,
     "tokenEvents": 130523,
     "turnContexts": 7097,
     "malformedLines": 0,
@@ -9842,7 +9842,7 @@
   "conversationEvidenceSummary": {
     "total": 245,
     "imported": 3,
-    "retrospective": 9,
+    "retrospective": 0,
     "byStance": {
       "claimed-manual-action": 5,
       "discussion": 230,
@@ -12286,42 +12286,264 @@
       "competing": false,
       "cause": "automatic-reset-observed-credit-unchanged",
       "eventConfidence": 0.99,
-      "manualEvidence": 0.14,
+      "manualEvidence": 0.72,
       "billingAnchor": "2026-07-21T05:34:00+12:00",
       "billingDistanceHours": 27.76,
       "nearbyConversationSignals": [
         {
-          "timestamp": "2026-07-22T10:46:36+12:00",
+          "timestamp": "2026-07-22T09:28:32+12:00",
+          "stance": "claimed-manual-action",
+          "evidenceWeight": 0.72,
+          "imported": false,
+          "retrospective": false
+        },
+        {
+          "timestamp": "2026-07-22T09:31:27+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-22T10:46:36+12:00",
+          "timestamp": "2026-07-22T09:33:13+12:00",
+          "stance": "observed-reset",
+          "evidenceWeight": 0.6,
+          "imported": false,
+          "retrospective": false
+        },
+        {
+          "timestamp": "2026-07-22T09:33:47+12:00",
           "stance": "discussion",
           "evidenceWeight": 0.12,
           "imported": false,
           "retrospective": false
         },
         {
-          "timestamp": "2026-07-22T11:19:41+12:00",
-          "stance": "discussion",
-          "evidenceWeight": 0.12,
-          "imported": false,
-          "retrospective": false
-        },
-        {
-          "timestamp": "2026-07-20T22:35:58+12:00",
+          "timestamp": "2026-07-22T09:57:34+12:00",
           "stance": "intention",
-          "evidenceWeight": 0.135,
-          "imported": true,
+          "evidenceWeight": 0.3,
+          "imported": false,
           "retrospective": false
         }
       ],
       "quotaClaimId": "quota-claim-025"
     }
   ],
+  "resetObservations": [
+    {
+      "id": "manual-probable-2026-07-16-165431",
+      "eventType": "manual-reset-action",
+      "lane": "main",
+      "occurredAt": "2026-07-16T16:54:31+12:00",
+      "recordedAt": "2026-07-23T16:30:00+12:00",
+      "advertisedNextResetAt": "2026-07-23T16:54:31+12:00",
+      "certainty": "probable-retrospective",
+      "confidence": 0.8,
+      "sourceType": "user-retrospective-recollection",
+      "sourceLabel": "User recalls two manual resets roughly one to two days apart; this action aligns with a 42,730-snapshot schedule claim.",
+      "phasePersistenceStatus": "open-test",
+      "notesPublic": "The reset action is probable, not independently confirmed. Whether its seven-day phase survives later resets is the experiment.",
+      "occurredAtMs": 1784177671000,
+      "advertisedNextResetAtMs": 1784782471000
+    },
+    {
+      "id": "manual-probable-2026-07-18-152623",
+      "eventType": "manual-reset-action",
+      "lane": "main",
+      "occurredAt": "2026-07-18T15:26:23+12:00",
+      "recordedAt": "2026-07-23T16:30:00+12:00",
+      "advertisedNextResetAt": "2026-07-25T15:26:23+12:00",
+      "certainty": "probable-retrospective",
+      "confidence": 0.8,
+      "sourceType": "user-retrospective-recollection",
+      "sourceLabel": "User recalls a second manual reset soon after the first; this action aligns with a 4,970-snapshot schedule claim.",
+      "phasePersistenceStatus": "open-test",
+      "notesPublic": "The reset action is probable, not independently confirmed. The July 25 deadline remains a parallel-phase test, not a promise.",
+      "occurredAtMs": 1784345183000,
+      "advertisedNextResetAtMs": 1784949983000
+    },
+    {
+      "id": "window-observed-2026-07-22-091923",
+      "eventType": "reset-window-start",
+      "lane": "main",
+      "occurredAt": "2026-07-22T09:19:23+12:00",
+      "recordedAt": "2026-07-22T10:40:38+12:00",
+      "advertisedNextResetAt": "2026-07-29T09:19:23+12:00",
+      "certainty": "backend-observed",
+      "confidence": 0.99,
+      "sourceType": "account-rate-limits-read",
+      "sourceLabel": "The live backend exposed a seven-day main window ending 29 July 09:19:23 NZ, fixing its start at this instant.",
+      "phasePersistenceStatus": "backend-current",
+      "notesPublic": "This establishes the window transition and next deadline. It does not by itself identify the trigger.",
+      "occurredAtMs": 1784668763000,
+      "advertisedNextResetAtMs": 1785273563000
+    }
+  ],
+  "timingComparisons": [
+    {
+      "id": "timezone-date-label-2026-07-22",
+      "referenceLabel": "UTC representation of the observed July 22 reset",
+      "advertisedAt": "2026-07-21T21:19:23Z",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "same-instant-timezone-date-shift",
+      "notesPublic": "These are the same instant. UTC says July 21 while Pacific/Auckland says July 22.",
+      "advertisedAtMs": 1784668763000,
+      "observedAtMs": 1784668763000,
+      "advertisedAtUtc": "2026-07-21T21:19:23.000Z",
+      "observedAtUtc": "2026-07-21T21:19:23.000Z",
+      "deltaSeconds": 0,
+      "deltaLabel": "same instant"
+    },
+    {
+      "id": "claim-v-actual-2026-07-22-083533",
+      "referenceLabel": "9,942-snapshot advertised deadline",
+      "advertisedAt": "2026-07-22T08:35:33+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "real-delay-or-observation-lag",
+      "notesPublic": "The observed window start was 43 minutes 50 seconds later. Timezone conversion cannot explain this difference.",
+      "advertisedAtMs": 1784666133000,
+      "observedAtMs": 1784668763000,
+      "advertisedAtUtc": "2026-07-21T20:35:33.000Z",
+      "observedAtUtc": "2026-07-21T21:19:23.000Z",
+      "deltaSeconds": 2630,
+      "deltaLabel": "43m 50s later"
+    },
+    {
+      "id": "claim-v-actual-2026-07-21-215739",
+      "referenceLabel": "530-snapshot advertised deadline",
+      "advertisedAt": "2026-07-21T21:57:39+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "real-delay-or-competing-clock",
+      "notesPublic": "The observed window start was 11 hours 21 minutes 44 seconds later.",
+      "advertisedAtMs": 1784627859000,
+      "observedAtMs": 1784668763000,
+      "advertisedAtUtc": "2026-07-21T09:57:39.000Z",
+      "observedAtUtc": "2026-07-21T21:19:23.000Z",
+      "deltaSeconds": 40904,
+      "deltaLabel": "11h 21m 44s later"
+    },
+    {
+      "id": "billing-anchor-v-actual-2026-07-21",
+      "referenceLabel": "14th-based billing-week anchor",
+      "advertisedAt": "2026-07-21T05:34:00+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "hypothesis-offset",
+      "notesPublic": "The observed window start was 27 hours 45 minutes 23 seconds later, so timezone alone does not align this anchor.",
+      "advertisedAtMs": 1784568840000,
+      "observedAtMs": 1784668763000,
+      "advertisedAtUtc": "2026-07-20T17:34:00.000Z",
+      "observedAtUtc": "2026-07-21T21:19:23.000Z",
+      "deltaSeconds": 99923,
+      "deltaLabel": "1d 3h 45m 23s later"
+    }
+  ],
+  "creditEvidence": {
+    "latestSnapshot": {
+      "id": "latest-probe-20260723T17133311881001200",
+      "observedAt": "2026-07-23T17:13:33.1188100+12:00",
+      "sourceType": "account-rate-limits-read",
+      "sourceLabel": "Codex CLI 0.137.0 live read",
+      "status": "not-returned",
+      "availableCount": null,
+      "credits": [],
+      "notesPublic": "The latest probe omitted rateLimitResetCredits. This is unknown, not zero.",
+      "observedAtMs": 1784783613118
+    },
+    "lastKnownSnapshot": {
+      "id": "credit-inventory-2026-07-22-104038",
+      "observedAt": "2026-07-22T10:40:38+12:00",
+      "sourceType": "account-rate-limits-read",
+      "sourceLabel": "Structured Codex app-server response",
+      "status": "returned",
+      "availableCount": 2,
+      "credits": [
+        {
+          "resetType": "codexRateLimits",
+          "status": "available",
+          "grantedAt": "2026-07-02T07:03:09+12:00",
+          "expiresAt": "2026-08-01T07:03:09+12:00",
+          "title": "Full reset",
+          "grantReason": "not-exposed"
+        },
+        {
+          "resetType": "codexRateLimits",
+          "status": "available",
+          "grantedAt": "2026-07-14T05:34:00+12:00",
+          "expiresAt": "2026-08-13T05:34:00+12:00",
+          "title": "Full reset",
+          "grantReason": "not-exposed"
+        }
+      ],
+      "notesPublic": "This is the only recovered structured inventory snapshot. It proves two credits were available then, but not why they were granted.",
+      "observedAtMs": 1784673638000
+    },
+    "currentAvailableCount": null,
+    "lastKnownAvailableCount": 2,
+    "latestStatus": "not-returned",
+    "structuredSnapshotCount": 1,
+    "preJulyStructuredSnapshotCount": 0,
+    "grants": [
+      {
+        "resetType": "codexRateLimits",
+        "status": "available",
+        "grantedAt": "2026-07-02T07:03:09+12:00",
+        "expiresAt": "2026-08-01T07:03:09+12:00",
+        "title": "Full reset",
+        "grantReason": "not-exposed",
+        "firstObservedAt": "2026-07-22T10:40:38+12:00"
+      },
+      {
+        "resetType": "codexRateLimits",
+        "status": "available",
+        "grantedAt": "2026-07-14T05:34:00+12:00",
+        "expiresAt": "2026-08-13T05:34:00+12:00",
+        "title": "Full reset",
+        "grantReason": "not-exposed",
+        "firstObservedAt": "2026-07-22T10:40:38+12:00"
+      }
+    ],
+    "inventorySnapshots": [
+      {
+        "id": "credit-inventory-2026-07-22-104038",
+        "observedAt": "2026-07-22T10:40:38+12:00",
+        "sourceType": "account-rate-limits-read",
+        "sourceLabel": "Structured Codex app-server response",
+        "status": "returned",
+        "availableCount": 2,
+        "credits": [
+          {
+            "resetType": "codexRateLimits",
+            "status": "available",
+            "grantedAt": "2026-07-02T07:03:09+12:00",
+            "expiresAt": "2026-08-01T07:03:09+12:00",
+            "title": "Full reset",
+            "grantReason": "not-exposed"
+          },
+          {
+            "resetType": "codexRateLimits",
+            "status": "available",
+            "grantedAt": "2026-07-14T05:34:00+12:00",
+            "expiresAt": "2026-08-13T05:34:00+12:00",
+            "title": "Full reset",
+            "grantReason": "not-exposed"
+          }
+        ],
+        "notesPublic": "This is the only recovered structured inventory snapshot. It proves two credits were available then, but not why they were granted.",
+        "observedAtMs": 1784673638000
+      },
+      {
+        "id": "latest-probe-20260723T17133311881001200",
+        "observedAt": "2026-07-23T17:13:33.1188100+12:00",
+        "sourceType": "account-rate-limits-read",
+        "sourceLabel": "Codex CLI 0.137.0 live read",
+        "status": "not-returned",
+        "availableCount": null,
+        "credits": [],
+        "notesPublic": "The latest probe omitted rateLimitResetCredits. This is unknown, not zero.",
+        "observedAtMs": 1784783613118
+      }
+    ]
+  },
   "ignoredModelOnlyHandoffs": [
     {
       "laneKey": "main|codex|prolite",
@@ -12369,7 +12591,9 @@
   "predictionRules": {
     "billingCycleDay": 14,
     "phaseContinuationsCrossBillingBoundary": false,
-    "retainedClaimsMustStartInCurrentBillingCycle": true
+    "retainedClaimsMustStartInCurrentBillingCycle": true,
+    "laterResetAutomaticallySupersedesEarlierPhase": false,
+    "manualPhasePersistenceWeight": 0.5
   },
   "phaseFamilies": [
     {
@@ -12534,24 +12758,9 @@
   "predictions": {
     "candidates": [
       {
-        "timestamp": "2026-07-23T16:54:31+12:00",
-        "timestampMs": 1784782471000,
-        "score": 0.153,
-        "confidence": "watch",
-        "label": "Main-lane retained deadline",
-        "evidence": [
-          {
-            "type": "retained-schedule-candidate",
-            "label": "Main-lane retained deadline",
-            "basis": "42730 snapshots across 2 model source(s), last observed 18 Jul 2026, 08:29",
-            "score": 0.153
-          }
-        ]
-      },
-      {
         "timestamp": "2026-07-25T08:38:35+12:00",
         "timestampMs": 1784925515000,
-        "score": 0.155,
+        "score": 0.154,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12559,14 +12768,14 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "35 snapshots across 1 model source(s), last observed 18 Jul 2026, 10:41",
-            "score": 0.155
+            "score": 0.154
           }
         ]
       },
       {
         "timestamp": "2026-07-25T10:45:09+12:00",
         "timestampMs": 1784933109000,
-        "score": 0.159,
+        "score": 0.158,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12574,29 +12783,35 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "503 snapshots across 2 model source(s), last observed 18 Jul 2026, 14:10",
-            "score": 0.159
+            "score": 0.158
           }
         ]
       },
       {
         "timestamp": "2026-07-25T15:26:23+12:00",
         "timestampMs": 1784949983000,
-        "score": 0.323,
+        "score": 0.4,
         "confidence": "watch",
-        "label": "Main-lane retained deadline",
+        "label": "Manual-phase persistence test",
         "evidence": [
+          {
+            "type": "manual-phase-persistence-test",
+            "label": "Manual-phase persistence test",
+            "basis": "User recalls a second manual reset soon after the first; this action aligns with a 4,970-snapshot schedule claim. The original deadline is well evidenced; survival after another reset is unproven.",
+            "score": 0.4
+          },
           {
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "4970 snapshots across 2 model source(s), last observed 22 Jul 2026, 11:19",
-            "score": 0.323
+            "score": 0.32
           }
         ]
       },
       {
         "timestamp": "2026-07-27T22:36:03+12:00",
         "timestampMs": 1785148563000,
-        "score": 0.266,
+        "score": 0.264,
         "confidence": "watch",
         "label": "Main-lane retained deadline",
         "evidence": [
@@ -12604,7 +12819,7 @@
             "type": "retained-schedule-candidate",
             "label": "Main-lane retained deadline",
             "basis": "182 snapshots across 1 model source(s), last observed 21 Jul 2026, 10:02",
-            "score": 0.266
+            "score": 0.264
           }
         ]
       },
@@ -12684,15 +12899,21 @@
     "earliestCredible": {
       "timestamp": "2026-07-25T15:26:23+12:00",
       "timestampMs": 1784949983000,
-      "score": 0.323,
+      "score": 0.4,
       "confidence": "watch",
-      "label": "Main-lane retained deadline",
+      "label": "Manual-phase persistence test",
       "evidence": [
+        {
+          "type": "manual-phase-persistence-test",
+          "label": "Manual-phase persistence test",
+          "basis": "User recalls a second manual reset soon after the first; this action aligns with a 4,970-snapshot schedule claim. The original deadline is well evidenced; survival after another reset is unproven.",
+          "score": 0.4
+        },
         {
           "type": "retained-schedule-candidate",
           "label": "Main-lane retained deadline",
           "basis": "4970 snapshots across 2 model source(s), last observed 22 Jul 2026, 11:19",
-          "score": 0.323
+          "score": 0.32
         }
       ]
     }
@@ -12700,18 +12921,18 @@
   "guidance": {
     "action": "EASE OFF",
     "headline": "Reserve capacity for high-value actions until the next credible reset.",
-    "currentUsedPercent": 72,
-    "remainingPercent": 28,
+    "currentUsedPercent": 73,
+    "remainingPercent": 27,
     "targetRemainingPercent": 18,
-    "elapsedWindowHours": 30.9,
-    "averageBurnPercentPerHour": 2.33,
-    "runwayHoursAtCurrentPace": 12,
+    "elapsedWindowHours": 31.9,
+    "averageBurnPercentPerHour": 2.29,
+    "runwayHoursAtCurrentPace": 11.8,
     "localTokensSinceReset": 83921326,
-    "hoursToEarliestCredibleReset": 47.2,
-    "hoursToCurrentBackendReset": 137.1,
+    "hoursToEarliestCredibleReset": 46.2,
+    "hoursToCurrentBackendReset": 136.1,
     "rationale": [
-      "28% of the main weekly allowance remains.",
-      "Earliest credible surprise reset is 25 Jul 2026, 15:26 at 32% model confidence.",
+      "27% of the main weekly allowance remains.",
+      "Earliest credible surprise reset is 25 Jul 2026, 15:26 at 40% model confidence.",
       "The current backend deadline is 29 Jul 2026, 09:19.",
       "Conversation intent is used only as weak corroboration; it never confirms a button press by itself."
     ]

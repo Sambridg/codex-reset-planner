@@ -1,12 +1,12 @@
 # Codex Reset and Usage Forensics
 
-Generated: 23 Jul 2026, 16:14:17
+Generated: 23 Jul 2026, 17:13:51
 
 ## Operational answer
 
 **EASE OFF: Reserve capacity for high-value actions until the next credible reset.**
 
-The main allowance is 72% used and 28% remains. The current backend deadline is **29 Jul 2026, 09:19**. The model's earliest credible surprise-reset candidate is **25 Jul 2026, 15:26**, while the highest-confidence date remains **29 Jul 2026, 09:19**.
+The main allowance is 73% used and 27% remains. The current backend deadline is **29 Jul 2026, 09:19**. The model's earliest credible surprise-reset candidate is **25 Jul 2026, 15:26**, while the highest-confidence date remains **29 Jul 2026, 09:19**.
 
 Recommended operating target: use valuable capacity aggressively but retain roughly **18%** until the earliest credible surprise window is resolved.
 
@@ -28,6 +28,27 @@ The current main window is anchored at **22 Jul 2026, 09:19:23** and advertises 
 A historical main-lane claim advertised **22 Jul 2026, 08:35:33**. Today's observed reset followed that older timer by approximately 0.73 hours.
 
 A competing later claim advertised **25 Jul 2026, 15:26:23**. Today's reset occurred 78.12 hours before it. This is strong evidence that the single date shown in the product is not sufficient for forecasting, but it does not prove that every historical timer remains live.
+
+The instant **2026-07-21 21:19:23 UTC** is exactly **2026-07-22 09:19:23 NZ**. That explains the one-day label shift only. It does not explain the real 43-minute-50-second difference from the strongest earlier July 22 claim.
+
+## Exact timing comparisons
+
+| Reference | Advertised/reference time | Observed time | Delta | Classification |
+| --- | --- | --- | --- | --- |
+| UTC representation of the observed July 22 reset | 22 Jul 2026, 09:19:23 | 22 Jul 2026, 09:19:23 | same instant | same-instant-timezone-date-shift |
+| 9,942-snapshot advertised deadline | 22 Jul 2026, 08:35:33 | 22 Jul 2026, 09:19:23 | 43m 50s later | real-delay-or-observation-lag |
+| 530-snapshot advertised deadline | 21 Jul 2026, 21:57:39 | 22 Jul 2026, 09:19:23 | 11h 21m 44s later | real-delay-or-competing-clock |
+| 14th-based billing-week anchor | 21 Jul 2026, 05:34:00 | 22 Jul 2026, 09:19:23 | 1d 3h 45m 23s later | hypothesis-offset |
+
+## Prospectively tracked reset observations
+
+| Occurred | Event | Certainty | Advertised next reset | Confidence |
+| --- | --- | --- | --- | --- |
+| 16 Jul 2026, 16:54:31 | manual-reset-action | probable-retrospective | 23 Jul 2026, 16:54:31 | 80% |
+| 18 Jul 2026, 15:26:23 | manual-reset-action | probable-retrospective | 25 Jul 2026, 15:26:23 | 80% |
+| 22 Jul 2026, 09:19:23 | reset-window-start | backend-observed | 29 Jul 2026, 09:19:23 | 99% |
+
+The two retrospective manual actions are deliberately marked probable. Their July 23 and July 25 deadlines are parallel-phase experiments: a later reset does not automatically delete them from the model, but persistence is not assumed to be proven either.
 
 ## Reset-event ledger
 
@@ -57,11 +78,10 @@ June 14 does not show a clean universal main reset: the dominant main claim cont
 
 | Candidate | Score | Band | Evidence |
 | --- | --- | --- | --- |
-| 23 Jul 2026, 16:54 | 15% | watch | Main-lane retained deadline |
-| 25 Jul 2026, 08:38 | 16% | watch | Main-lane retained deadline |
+| 25 Jul 2026, 08:38 | 15% | watch | Main-lane retained deadline |
 | 25 Jul 2026, 10:45 | 16% | watch | Main-lane retained deadline |
-| 25 Jul 2026, 15:26 | 32% | watch | Main-lane retained deadline |
-| 27 Jul 2026, 22:36 | 27% | watch | Main-lane retained deadline |
+| 25 Jul 2026, 15:26 | 40% | watch | Manual-phase persistence test; Main-lane retained deadline |
+| 27 Jul 2026, 22:36 | 26% | watch | Main-lane retained deadline |
 | 28 Jul 2026, 05:34 | 34% | watch | Billing-week anchor |
 | 29 Jul 2026, 09:19 | 92% | high | Current backend deadline; Main-lane retained deadline |
 | 4 Aug 2026, 05:34 | 34% | watch | Billing-week anchor |
@@ -81,12 +101,14 @@ June 14 does not show a clean universal main reset: the dominant main claim cont
 
 No historical reset-credit redemption transaction is exposed in the available app-server history or rollout events. Generic `credits` fields in old token events are not the reset bank. A historical event is therefore labelled manual only as a candidate when a nearby conversation claims an action; even then, the statement is not treated as ground truth.
 
+The only recovered structured reset-credit snapshot was captured on **22 Jul 2026, 10:40:38** and showed **2** available credits. The latest CLI read omitted the reset-credit field, which means unknown rather than zero. No structured pre-July inventory snapshots were found, and the service did not expose why either credit was granted.
+
 Prospectively, manual attribution can be made deterministic by recording the reset-credit inventory before and after every schedule transition. A count drop confirms a manual redemption; an unchanged inventory supports an automatic event.
 
 ## Evidence and limitations
 
 - Source period: 22 May 2026, 00:00 through 23 Jul 2026, 00:00.
-- Rollout files: 673; bytes scanned: 3,181,446,552.
+- Rollout files: 673; bytes scanned: 3,182,224,032.
 - Token events: 130,523; hourly buckets: 650.
 - Conversation signals: 245; imported and retrospective clues receive sharply reduced weight. Raw excerpts and session identifiers are not published.
 - Multiple historical sessions can report conflicting deadlines for the same quota lane. Model identity is ignored for reset inference, and model-only handoffs are excluded.

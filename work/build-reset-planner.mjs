@@ -127,6 +127,11 @@ const template = String.raw`<!doctype html>
     .action-pill:before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #63d49f; box-shadow: 0 0 0 5px rgba(99,212,159,.12); }
     .decision-main h2 { position: relative; z-index: 1; font-size: clamp(27px, 3vw, 43px); line-height: 1.03; letter-spacing: -.04em; margin: 36px 0 12px; max-width: 720px; }
     .decision-main p { position: relative; z-index: 1; color: #c8d7df; line-height: 1.55; max-width: 720px; margin: 0; }
+    .ledger-note { border-left: 4px solid var(--blue); padding: 12px 14px; background: rgba(35,109,145,.07); border-radius: 0 10px 10px 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .ledger-note.warn { border-color: var(--orange); background: rgba(220,109,49,.08); }
+    .local-ledger { display: grid; gap: 8px; margin-top: 14px; }
+    .local-entry { display: grid; grid-template-columns: 150px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .local-entry:last-child { border-bottom: 0; }
     .decision-side { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .metric { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; min-height: 128px; }
     .metric .label { color: var(--muted); font: 600 10px "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
@@ -277,6 +282,8 @@ const template = String.raw`<!doctype html>
         <button class="tab" data-tab="history">Observed history</button>
         <button class="tab" data-tab="lab">Forecast lab</button>
         <button class="tab" data-tab="evidence">Evidence</button>
+        <button class="tab" data-tab="timing">Timing log</button>
+        <button class="tab" data-tab="credits">Reset credits</button>
       </nav>
     </header>
 
@@ -380,6 +387,7 @@ const template = String.raw`<!doctype html>
               <label class="check"><input id="rhythmToggle" type="checkbox">Use historical weekday/hour rhythm</label>
               <label class="check"><input id="billingToggle" type="checkbox">Treat billing-week anchors as real resets</label>
               <label class="check"><input id="watchToggle" type="checkbox">Treat every watch candidate as a real reset</label>
+              <label class="check"><input id="phaseToggle" type="checkbox">Repeat each manual marker every seven days until the billing boundary</label>
               <p class="section-note">The last option is deliberately aggressive. It shows upside, not the most likely outcome.</p>
             </div>
             <div class="control-card">
@@ -405,9 +413,65 @@ const template = String.raw`<!doctype html>
         </article>
         <div class="spacer"></div>
         <div class="grid-2">
-          <article class="card"><h3>What is directly observed</h3><p class="section-note">Official daily token totals; exact local model-call timestamps; quota limit identity; advertised reset timestamps captured in rate-limit snapshots; current main and Spark meters; current reset-credit inventory.</p></article>
+          <article class="card"><h3>What is directly observed</h3><p class="section-note">Official daily token totals; exact local model-call timestamps; quota limit identity; advertised reset timestamps captured in rate-limit snapshots; current main and Spark meters; last known reset-credit inventory.</p></article>
           <article class="card"><h3>What remains inferred</h3><p class="section-note">The cause of historical phase shifts; whether a retained timer from the current billing cycle can still fire; whether the billing boundary itself forces a reset; historical reset-credit redemption without before/after inventory snapshots.</p></article>
         </div>
+      </section>
+
+      <section class="panel" id="panel-timing">
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-head"><div><h2>Tracked reset actions and windows</h2><p>Exact instants are shown in both Pacific/Auckland and UTC.</p></div><span class="badge info">cause-aware</span></div>
+            <div class="evidence-table-wrap"><table><thead><tr><th>NZ instant</th><th>UTC instant</th><th>Event</th><th>Certainty</th><th>Advertised next reset</th><th>Experiment state</th></tr></thead><tbody id="trackedTimingRows"></tbody></table></div>
+          </article>
+          <article class="card">
+            <h2>What the July test means</h2>
+            <p class="ledger-note">The July 16 and July 18 deadlines are retained as parallel-phase tests. The model does not assume a later reset erases an earlier phase, and it does not claim persistence is proven before the expected tick is observed.</p>
+            <p class="ledger-note warn">A date changing from July 21 UTC to July 22 NZ can be timezone only. A 43-minute or 11-hour difference is real timing, observation lag, or a competing clock.</p>
+          </article>
+        </div>
+        <div class="spacer"></div>
+        <article class="card">
+          <div class="card-head"><div><h2>Advertised versus observed timing</h2><p>This table separates a timezone label shift from actual timing differences.</p></div></div>
+          <div class="evidence-table-wrap"><table><thead><tr><th>Reference</th><th>Advertised/reference NZ</th><th>Observed NZ</th><th>UTC comparison</th><th>Delta</th><th>Classification</th></tr></thead><tbody id="timingComparisonRows"></tbody></table></div>
+        </article>
+        <div class="spacer"></div>
+        <article class="card">
+          <div class="card-head"><div><h2>Record an event now</h2><p>Entries stay in this browser until exported. For repository-backed evidence, use the recorder command shown below.</p></div><span class="badge watch">browser local</span></div>
+          <form class="form-grid" id="observationForm">
+            <label class="field">Event<select id="observationType"><option value="manual-reset-action">Manual reset performed</option><option value="reset-window-start">Reset observed</option><option value="advertised-deadline">Deadline captured</option><option value="credit-inventory">Credit inventory captured</option></select></label>
+            <label class="field">Exact event time<input id="observationAt" type="datetime-local" step="1" required></label>
+            <label class="field">Advertised next reset<input id="observationNext" type="datetime-local" step="1"></label>
+            <label class="field">Used percent<input id="observationUsed" type="number" min="0" max="100" step="1"></label>
+            <label class="field">Reset credits<input id="observationCredits" type="number" min="0" step="1"></label>
+            <label class="field">Public note<input id="observationNote" type="text" maxlength="240" placeholder="What was directly observed?"></label>
+            <button class="btn orange" type="submit">Record locally</button>
+          </form>
+          <div class="btn-row"><button class="btn" id="exportObservations" type="button">Export observations</button><button class="btn danger" id="clearObservations" type="button">Clear local entries</button></div>
+          <div class="local-ledger" id="localObservationRows"></div>
+          <p class="section-note mono">Repository recorder: node work/record-reset-observation.mjs --type manual-reset-action --at now --next-reset &lt;exact timestamp&gt;</p>
+        </article>
+      </section>
+
+      <section class="panel" id="panel-credits">
+        <div class="source-grid" id="creditSummaryGrid"></div>
+        <div class="spacer"></div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-head"><div><h2>Recovered credit grants</h2><p>Grant timestamps and expiries are direct fields. Grant reasons were not exposed.</p></div></div>
+            <div class="evidence-table-wrap"><table><thead><tr><th>Granted NZ</th><th>Expires NZ</th><th>Status</th><th>Type</th><th>Reason</th></tr></thead><tbody id="creditGrantRows"></tbody></table></div>
+          </article>
+          <article class="card">
+            <h2>Interpretation boundary</h2>
+            <p class="ledger-note">The July 22 snapshot proves that two credits were available then. The latest CLI read omitted the entire field, so current inventory is unknown rather than zero.</p>
+            <p class="ledger-note warn">No pre-July structured inventory snapshots or redemption transactions were recovered. Referral, subscription tier, changelog milestone, and periodic grant explanations remain hypotheses.</p>
+          </article>
+        </div>
+        <div class="spacer"></div>
+        <article class="card">
+          <div class="card-head"><div><h2>Inventory snapshot ledger</h2><p>Only account-backed structured responses count here. Documentation examples and conversation mentions are excluded.</p></div></div>
+          <div class="evidence-table-wrap"><table><thead><tr><th>Observed NZ</th><th>Observed UTC</th><th>Field state</th><th>Available</th><th>Source</th><th>Interpretation</th></tr></thead><tbody id="creditSnapshotRows"></tbody></table></div>
+        </article>
       </section>
     </main>
   </div>
@@ -422,7 +486,8 @@ const template = String.raw`<!doctype html>
     const DAY = 24 * HOUR;
     const WEEK = 7 * DAY;
     const NZ = 'Pacific/Auckland';
-    const STATE_KEY = 'codex-reset-forensics-scenario-v2';
+    const STATE_KEY = 'codex-reset-forensics-scenario-v3';
+    const OBSERVATION_KEY = 'codex-reset-observations-v1';
     const $ = function (id) { return document.getElementById(id); };
     const tooltip = $('tooltip');
     const toast = $('toast');
@@ -450,6 +515,7 @@ const template = String.raw`<!doctype html>
       return new Intl.DateTimeFormat('en-NZ', options).format(new Date(ms));
     }
     function nzFull(ms) { return new Intl.DateTimeFormat('en-NZ', { timeZone: NZ, weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(ms)); }
+    function utcFull(ms) { return new Date(ms).toISOString().replace('T', ' ').replace('.000Z', 'Z'); }
     function localInput(ms) {
       const d = new Date(ms);
       const local = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -470,7 +536,7 @@ const template = String.raw`<!doctype html>
     }
 
     const defaults = {
-      version: 2,
+      version: 3,
       currentUsed: DATA.account.main.usedPercent,
       forecastDays: 35,
       baseBurnPerDay: 14,
@@ -478,6 +544,7 @@ const template = String.raw`<!doctype html>
       useHistoricalRhythm: true,
       applyBillingResets: false,
       applyWatchResets: false,
+      repeatManualPhases: false,
       manualResets: [],
       usageBlocks: []
     };
@@ -486,12 +553,21 @@ const template = String.raw`<!doctype html>
     function loadState() {
       try {
         const stored = JSON.parse(localStorage.getItem(STATE_KEY));
-        if (stored && stored.version === 2) return Object.assign({}, defaults, stored);
+        if (stored && (stored.version === 2 || stored.version === 3)) return Object.assign({}, defaults, stored, { version: 3 });
       } catch (error) {}
       return JSON.parse(JSON.stringify(defaults));
     }
     function saveState() { localStorage.setItem(STATE_KEY, JSON.stringify(state)); }
     function commit() { saveState(); renderOverview(); renderLab(); renderScenarioLists(); syncControls(); }
+    function loadLocalObservations() {
+      try {
+        const stored = JSON.parse(localStorage.getItem(OBSERVATION_KEY));
+        if (Array.isArray(stored)) return stored;
+      } catch (error) {}
+      return [];
+    }
+    let localObservations = loadLocalObservations();
+    function saveLocalObservations() { localStorage.setItem(OBSERVATION_KEY, JSON.stringify(localObservations)); }
 
     function buildRhythm() {
       const sums = Array(168).fill(0);
@@ -540,10 +616,20 @@ const template = String.raw`<!doctype html>
       let availableHours = 0;
       let resetCount = 0;
       const resetEvents = [];
-      const manual = state.manualResets.slice().filter(function (item) { return item.at >= start && item.at <= end; }).sort(function (a, b) { return a.at - b.at; });
+      const manual = [];
+      state.manualResets.forEach(function (item) {
+        if (item.at >= start && item.at <= end) manual.push({ id: item.id, at: item.at, recurring: false });
+        if (!state.repeatManualPhases) return;
+        const boundary = DATA.billingAnchors.filter(function (anchor) { return anchor.type === 'billing-month' && anchor.timestampMs > item.at; }).sort(function (a, b) { return a.timestampMs - b.timestampMs; })[0];
+        const stopAt = boundary ? boundary.timestampMs : end + 1;
+        for (let tick = item.at + WEEK; tick <= end && tick < stopAt; tick += WEEK) {
+          if (tick >= start) manual.push({ id: item.id + '-phase-' + tick, at: tick, recurring: true });
+        }
+      });
+      manual.sort(function (a, b) { return a.at - b.at; });
       const billing = state.applyBillingResets ? DATA.billingAnchors.map(function (item) { return { at: Number(item.timestampMs) || Date.parse(item.timestamp), kind: 'billing' }; }).filter(function (item) { return Number.isFinite(item.at) && item.at >= start && item.at <= end; }) : [];
       const watches = state.applyWatchResets ? DATA.predictions.candidates.filter(function (item) { return item.timestampMs >= start && item.timestampMs <= end && item.timestampMs !== backendReset; }).map(function (item) { return { at: item.timestampMs, kind: 'watch' }; }) : [];
-      const discretionary = manual.map(function (item) { return { at: item.at, kind: 'manual', id: item.id }; }).concat(billing, watches).sort(function (a, b) { return a.at - b.at; });
+      const discretionary = manual.map(function (item) { return { at: item.at, kind: item.recurring ? 'manual-phase' : 'manual', id: item.id }; }).concat(billing, watches).sort(function (a, b) { return a.at - b.at; });
       let discretionaryIndex = 0;
       const points = [{ at: start, capacity: capacity, burn: 0 }];
 
@@ -614,9 +700,11 @@ const template = String.raw`<!doctype html>
       $('likelyConfidence').textContent = Math.round(DATA.predictions.mostLikely.score * 100) + '% model confidence / current backend deadline';
       $('watchReset').textContent = nzDate(DATA.predictions.earliestCredible.timestampMs, true);
       $('watchConfidence').textContent = Math.round(DATA.predictions.earliestCredible.score * 100) + '% watch confidence / historical phase projection';
-      $('creditCount').textContent = DATA.account.resetCredits.length;
-      const firstExpiry = DATA.account.resetCredits.slice().sort(function (a, b) { return Date.parse(a.expiresAtIso) - Date.parse(b.expiresAtIso); })[0];
-      $('creditExpiry').textContent = firstExpiry ? 'first expires ' + nzDate(Date.parse(firstExpiry.expiresAtIso), false) : 'none available';
+      const creditEvidence = DATA.creditEvidence || {};
+      const shownCredits = creditEvidence.currentAvailableCount == null ? creditEvidence.lastKnownAvailableCount : creditEvidence.currentAvailableCount;
+      $('creditCount').textContent = creditEvidence.currentAvailableCount == null ? String(shownCredits == null ? '?' : shownCredits) + ' last known' : shownCredits;
+      const firstExpiry = (creditEvidence.grants || []).slice().filter(function (credit) { return credit.status === 'available'; }).sort(function (a, b) { return Date.parse(a.expiresAt) - Date.parse(b.expiresAt); })[0];
+      $('creditExpiry').textContent = creditEvidence.currentAvailableCount == null ? 'latest probe omitted field; not zero' : (firstExpiry ? 'first expires ' + nzDate(Date.parse(firstExpiry.expiresAt), false) : 'none available');
       $('stopRuleStatus').textContent = remaining <= 30 ? 'STOP NOW: ' + round(remaining, 0) + '% remaining' : 'Goal stop rule armed: stop at 30% remaining';
 
       const candidates = DATA.predictions.candidates.slice().sort(function (a, b) { return a.timestampMs - b.timestampMs; }).filter(function (item) { return item.timestampMs >= baseNow; }).slice(0, 8);
@@ -859,6 +947,48 @@ const template = String.raw`<!doctype html>
       }).join('');
     }
 
+    function experimentState(observation) {
+      if (observation.advertisedNextResetAtMs == null) return observation.phasePersistenceStatus || 'not applicable';
+      if (observation.advertisedNextResetAtMs > baseNow) return 'awaiting expected tick';
+      if (Math.abs(observation.advertisedNextResetAtMs - backendReset) < 60000) return 'became backend current';
+      return 'window passed; outcome needs an observation';
+    }
+
+    function renderTimingLog() {
+      const observations = (DATA.resetObservations || []).slice().sort(function (a, b) { return a.occurredAtMs - b.occurredAtMs; });
+      $('trackedTimingRows').innerHTML = observations.map(function (observation) {
+        const certaintyClass = observation.certainty === 'backend-observed' ? 'high' : 'watch';
+        const next = observation.advertisedNextResetAtMs == null ? 'not captured' : nzFull(observation.advertisedNextResetAtMs);
+        return '<tr><td class="mono">' + escapeHtml(nzFull(observation.occurredAtMs)) + '</td><td class="mono">' + escapeHtml(utcFull(observation.occurredAtMs)) + '</td><td>' + escapeHtml(observation.eventType) + '</td><td><span class="badge ' + certaintyClass + '">' + escapeHtml(observation.certainty) + '</span></td><td class="mono">' + escapeHtml(next) + '</td><td>' + escapeHtml(experimentState(observation)) + '</td></tr>';
+      }).join('');
+      $('timingComparisonRows').innerHTML = (DATA.timingComparisons || []).map(function (comparison) {
+        return '<tr><td>' + escapeHtml(comparison.referenceLabel) + '</td><td class="mono">' + escapeHtml(nzFull(comparison.advertisedAtMs)) + '</td><td class="mono">' + escapeHtml(nzFull(comparison.observedAtMs)) + '</td><td class="mono">' + escapeHtml(comparison.advertisedAtUtc + ' / ' + comparison.observedAtUtc) + '</td><td>' + escapeHtml(comparison.deltaLabel) + '</td><td>' + escapeHtml(comparison.classification) + '</td></tr>';
+      }).join('');
+      $('localObservationRows').innerHTML = localObservations.length ? localObservations.slice().sort(function (a, b) { return Date.parse(b.occurredAt) - Date.parse(a.occurredAt); }).map(function (observation) {
+        return '<div class="local-entry"><span class="mono">' + escapeHtml(nzFull(Date.parse(observation.occurredAt))) + '</span><span><strong>' + escapeHtml(observation.eventType) + '</strong><br>' + escapeHtml(observation.note || 'No note') + '</span><span class="badge info">local</span></div>';
+      }).join('') : '<p class="section-note">No browser-local observations recorded.</p>';
+    }
+
+    function renderCreditLedger() {
+      const evidence = DATA.creditEvidence || {};
+      const latest = evidence.latestSnapshot || {};
+      const lastKnown = evidence.lastKnownSnapshot || {};
+      const summary = [
+        [latest.availableCount == null ? 'Not returned' : latest.availableCount, 'latest probe field'],
+        [evidence.lastKnownAvailableCount == null ? 'Unknown' : evidence.lastKnownAvailableCount, 'last known available'],
+        [evidence.structuredSnapshotCount || 0, 'structured snapshots'],
+        [evidence.preJulyStructuredSnapshotCount || 0, 'pre-July snapshots']
+      ];
+      $('creditSummaryGrid').innerHTML = summary.map(function (item) { return '<div class="source-item"><strong>' + escapeHtml(item[0]) + '</strong><span>' + escapeHtml(item[1]) + '</span></div>'; }).join('');
+      $('creditGrantRows').innerHTML = (evidence.grants || []).map(function (credit) {
+        return '<tr><td class="mono">' + escapeHtml(nzFull(Date.parse(credit.grantedAt))) + '</td><td class="mono">' + escapeHtml(nzFull(Date.parse(credit.expiresAt))) + '</td><td>' + escapeHtml(credit.status || 'unknown') + '</td><td>' + escapeHtml(credit.title || credit.resetType || 'unknown') + '</td><td>' + escapeHtml(credit.grantReason || 'not exposed') + '</td></tr>';
+      }).join('');
+      $('creditSnapshotRows').innerHTML = (evidence.inventorySnapshots || []).slice().sort(function (a, b) { return a.observedAtMs - b.observedAtMs; }).map(function (snapshot) {
+        return '<tr><td class="mono">' + escapeHtml(nzFull(snapshot.observedAtMs)) + '</td><td class="mono">' + escapeHtml(utcFull(snapshot.observedAtMs)) + '</td><td>' + escapeHtml(snapshot.status || (snapshot.availableCount == null ? 'not returned' : 'returned')) + '</td><td>' + escapeHtml(snapshot.availableCount == null ? 'unknown' : snapshot.availableCount) + '</td><td>' + escapeHtml(snapshot.sourceLabel || snapshot.sourceType || 'unknown') + '</td><td>' + escapeHtml(snapshot.notesPublic || '') + '</td></tr>';
+      }).join('');
+      if (lastKnown.observedAtMs) $('creditSummaryGrid').setAttribute('title', 'Last known inventory observed ' + nzFull(lastKnown.observedAtMs));
+    }
+
     function bindTips(root) {
       root.querySelectorAll('.tip-target').forEach(function (element) {
         element.addEventListener('pointerenter', function (event) { showTip(event, element.getAttribute('data-tip')); });
@@ -875,6 +1005,7 @@ const template = String.raw`<!doctype html>
       $('rhythmToggle').checked = state.useHistoricalRhythm;
       $('billingToggle').checked = state.applyBillingResets;
       $('watchToggle').checked = state.applyWatchResets;
+      $('phaseToggle').checked = state.repeatManualPhases;
     }
 
     function bindControls() {
@@ -888,7 +1019,7 @@ const template = String.raw`<!doctype html>
       [['usedInput','currentUsed'],['daysInput','forecastDays'],['burnInput','baseBurnPerDay'],['tokenInput','tokenCalibration']].forEach(function (binding) {
         $(binding[0]).addEventListener('change', function () { state[binding[1]] = Number($(binding[0]).value); commit(); });
       });
-      [['rhythmToggle','useHistoricalRhythm'],['billingToggle','applyBillingResets'],['watchToggle','applyWatchResets']].forEach(function (binding) {
+      [['rhythmToggle','useHistoricalRhythm'],['billingToggle','applyBillingResets'],['watchToggle','applyWatchResets'],['phaseToggle','repeatManualPhases']].forEach(function (binding) {
         $(binding[0]).addEventListener('change', function () { state[binding[1]] = $(binding[0]).checked; commit(); });
       });
       $('historyDay').addEventListener('change', function () { renderHourChart($('historyDay').value); });
@@ -907,9 +1038,38 @@ const template = String.raw`<!doctype html>
       });
       $('importScenario').addEventListener('change', function (event) {
         const file = event.target.files[0]; if (!file) return;
-        const reader = new FileReader(); reader.onload = function () { try { const parsed = JSON.parse(reader.result); const incoming = parsed.scenario || parsed; state = Object.assign({}, defaults, incoming, { version: 2 }); commit(); showToast('Scenario imported.'); } catch (error) { showToast('That scenario file is not valid JSON.'); } }; reader.readAsText(file);
+        const reader = new FileReader(); reader.onload = function () { try { const parsed = JSON.parse(reader.result); const incoming = parsed.scenario || parsed; state = Object.assign({}, defaults, incoming, { version: 3 }); commit(); showToast('Scenario imported.'); } catch (error) { showToast('That scenario file is not valid JSON.'); } }; reader.readAsText(file);
       });
       $('resetScenario').addEventListener('click', function () { if (window.confirm('Reset the forecast scenario to defaults?')) { state = JSON.parse(JSON.stringify(defaults)); commit(); } });
+      $('observationForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const at = Date.parse($('observationAt').value);
+        const next = Date.parse($('observationNext').value);
+        if (!Number.isFinite(at)) { showToast('Enter an exact event time.'); return; }
+        localObservations.push({
+          id: uid('observation'),
+          eventType: $('observationType').value,
+          occurredAt: new Date(at).toISOString(),
+          advertisedNextResetAt: Number.isFinite(next) ? new Date(next).toISOString() : null,
+          usedPercent: $('observationUsed').value === '' ? null : Number($('observationUsed').value),
+          creditCount: $('observationCredits').value === '' ? null : Number($('observationCredits').value),
+          note: $('observationNote').value.trim(),
+          recordedAt: new Date().toISOString()
+        });
+        saveLocalObservations();
+        renderTimingLog();
+        showToast('Observation recorded in this browser.');
+      });
+      $('exportObservations').addEventListener('click', function () {
+        const blob = new Blob([JSON.stringify({ schemaVersion: 1, exportedAt: new Date().toISOString(), observations: localObservations }, null, 2)], { type: 'application/json' });
+        const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'codex-reset-observations.json'; link.click(); URL.revokeObjectURL(link.href);
+      });
+      $('clearObservations').addEventListener('click', function () {
+        if (!window.confirm('Clear browser-local reset observations?')) return;
+        localObservations = [];
+        saveLocalObservations();
+        renderTimingLog();
+      });
     }
 
     function initialize() {
@@ -918,8 +1078,9 @@ const template = String.raw`<!doctype html>
       $('historyDay').value = peakDay.date;
       $('blockStart').value = localInput(baseNow + 6 * HOUR);
       $('blockEnd').value = localInput(baseNow + 18 * HOUR);
+      $('observationAt').value = localInput(Date.now());
       bindControls();
-      renderOverview(); renderHistory(); renderHourChart(peakDay.date); renderHeatmap(); renderLab(); renderScenarioLists(); renderEvidence(); syncControls();
+      renderOverview(); renderHistory(); renderHourChart(peakDay.date); renderHeatmap(); renderLab(); renderScenarioLists(); renderEvidence(); renderTimingLog(); renderCreditLedger(); syncControls();
       const hash = location.hash.replace('#', '');
       if (hash && document.querySelector('.tab[data-tab="' + hash + '"]')) document.querySelector('.tab[data-tab="' + hash + '"]').click();
     }

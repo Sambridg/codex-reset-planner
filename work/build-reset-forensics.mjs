@@ -4,11 +4,13 @@ import path from "node:path";
 import readline from "node:readline";
 import { billingCycleBounds, claimStartsInCurrentBillingCycle, projectWeeklyPhaseWithinBillingCycle } from "./lib/billing-cycle.mjs";
 import { quotaLaneKey, sharedObservationModels } from "./lib/reset-evidence.mjs";
+import { buildCreditEvidence, buildManualPhaseCandidates, buildTimingComparison, normalizeObservationLedger } from "./lib/reset-observations.mjs";
 import { zonedDate, zonedHour, zonedIso } from "./lib/time.mjs";
 
 const HOME = process.env.USERPROFILE || os.homedir();
 const WORKSPACE = process.env.RESET_PLANNER_WORKSPACE || process.cwd();
 const OUTPUTS = path.join(WORKSPACE, "outputs");
+const OBSERVATION_LEDGER_PATH = path.join(WORKSPACE, "data", "reset-observations.json");
 const RANGE_START_MS = Date.parse("2026-05-21T12:00:00Z");
 const RANGE_END_MS = Date.parse("2026-07-22T12:00:00Z");
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
@@ -29,7 +31,7 @@ function envNumber(name, fallback) {
 }
 
 const ACCOUNT = {
-  capturedAt: process.env.CURRENT_CAPTURED_AT || "2026-07-22T10:34:00+12:00",
+  capturedAt: process.env.CURRENT_CAPTURED_AT || "2026-07-23T16:32:35+12:00",
   accountType: "chatgpt",
   planType: "pro",
   lifetimeTokens: 19_811_078_874,
@@ -37,13 +39,13 @@ const ACCOUNT = {
   currentStreakDays: 180,
   main: {
     limitId: "codex",
-    usedPercent: envNumber("CURRENT_MAIN_USED_PERCENT", 3),
+    usedPercent: envNumber("CURRENT_MAIN_USED_PERCENT", 73),
     windowMinutes: 10_080,
     resetsAt: envNumber("CURRENT_MAIN_RESETS_AT", 1_785_273_563),
   },
   spark: {
     limitId: "codex_bengalfox",
-    usedPercent: envNumber("CURRENT_SPARK_USED_PERCENT", 1),
+    usedPercent: envNumber("CURRENT_SPARK_USED_PERCENT", 2),
     windowMinutes: 10_080,
     resetsAt: envNumber("CURRENT_SPARK_RESETS_AT", 1_785_274_135),
   },
@@ -722,7 +724,7 @@ function buildPhaseFamilies(events) {
   });
 }
 
-function buildPredictions(claims, billingAnchors, phaseFamilies, nowMs) {
+function buildPredictions(claims, billingAnchors, phaseFamilies, observations, nowMs) {
   const candidates = [];
   const add = (candidate) => {
     if (candidate.timestampMs <= nowMs || candidate.timestampMs > nowMs + 16 * 24 * HOUR_MS) return;
@@ -752,6 +754,14 @@ function buildPredictions(claims, billingAnchors, phaseFamilies, nowMs) {
       label: `${claim.logicalLane === "spark" ? "Spark" : "Main-lane"} retained deadline`,
       basis: `${claim.samples} snapshots across ${claim.sourceModels.length} model source(s), last observed ${formatNz(claim.lastObservedAtMs)}`,
       claimId: claim.id,
+    });
+  }
+
+  for (const candidate of buildManualPhaseCandidates(observations, nowMs)) {
+    if (!claimStartsInCurrentBillingCycle(candidate.originAtMs, nowMs, BILLING_CYCLE_STARTS)) continue;
+    add({
+      ...candidate,
+      type: "manual-phase-persistence-test",
     });
   }
 
@@ -890,6 +900,20 @@ function buildReport(data) {
     candidate.confidence,
     candidate.evidence.map((item) => item.label).join("; "),
   ]);
+  const timingRows = data.timingComparisons.map((comparison) => [
+    comparison.referenceLabel,
+    formatNz(comparison.advertisedAtMs, true),
+    formatNz(comparison.observedAtMs, true),
+    comparison.deltaLabel,
+    comparison.classification,
+  ]);
+  const observationRows = data.resetObservations.map((observation) => [
+    formatNz(observation.occurredAtMs, true),
+    observation.eventType,
+    observation.certainty,
+    observation.advertisedNextResetAtMs == null ? "unknown" : formatNz(observation.advertisedNextResetAtMs, true),
+    `${Math.round(observation.confidence * 100)}%`,
+  ]);
 
   return `# Codex Reset and Usage Forensics\n\n` +
 `Generated: ${formatNz(Date.now(), true)}\n\n` +
@@ -910,6 +934,12 @@ function buildReport(data) {
 `The current main window is anchored at **${formatNz(currentStartMs, true)}** and advertises **${formatNz(ACCOUNT.main.resetsAt * 1000, true)}**.\n\n` +
 (jul22Legacy ? `A historical main-lane claim advertised **${formatNz(jul22Legacy.resetAtMs, true)}**. Today's observed reset followed that older timer by approximately ${round((currentStartMs - jul22Legacy.resetAtMs) / HOUR_MS, 2)} hours.\n\n` : "") +
 (jul25Claim ? `A competing later claim advertised **${formatNz(jul25Claim.resetAtMs, true)}**. Today's reset occurred ${round((jul25Claim.resetAtMs - currentStartMs) / HOUR_MS, 2)} hours before it. This is strong evidence that the single date shown in the product is not sufficient for forecasting, but it does not prove that every historical timer remains live.\n\n` : "") +
+`The instant **2026-07-21 21:19:23 UTC** is exactly **2026-07-22 09:19:23 NZ**. That explains the one-day label shift only. It does not explain the real 43-minute-50-second difference from the strongest earlier July 22 claim.\n\n` +
+`## Exact timing comparisons\n\n` +
+markdownTable(["Reference", "Advertised/reference time", "Observed time", "Delta", "Classification"], timingRows) + "\n\n" +
+`## Prospectively tracked reset observations\n\n` +
+markdownTable(["Occurred", "Event", "Certainty", "Advertised next reset", "Confidence"], observationRows) + "\n\n" +
+`The two retrospective manual actions are deliberately marked probable. Their July 23 and July 25 deadlines are parallel-phase experiments: a later reset does not automatically delete them from the model, but persistence is not assumed to be proven either.\n\n` +
 `## Reset-event ledger\n\n` +
 markdownTable(["Inferred event", "Timing", "Prior deadline", "New deadline", "Delta", "Confidence", "Cause"], eventRows) + "\n\n" +
 `## Billing-cycle hypothesis\n\n` +
@@ -921,6 +951,7 @@ markdownTable(["Candidate", "Score", "Band", "Evidence"], predictionRows) + "\n\
 markdownTable(["UTC day", "Official tokens", "Local raw tokens", "Raw / official"], comparisonRows) + "\n\n" +
 `## Manual-reset attribution\n\n` +
 `No historical reset-credit redemption transaction is exposed in the available app-server history or rollout events. Generic \`credits\` fields in old token events are not the reset bank. A historical event is therefore labelled manual only as a candidate when a nearby conversation claims an action; even then, the statement is not treated as ground truth.\n\n` +
+`The only recovered structured reset-credit snapshot was captured on **${formatNz(data.creditEvidence.lastKnownSnapshot.observedAtMs, true)}** and showed **${data.creditEvidence.lastKnownAvailableCount}** available credits. The latest CLI read omitted the reset-credit field, which means unknown rather than zero. No structured pre-July inventory snapshots were found, and the service did not expose why either credit was granted.\n\n` +
 `Prospectively, manual attribution can be made deterministic by recording the reset-credit inventory before and after every schedule transition. A count drop confirms a manual redemption; an unchanged inventory supports an automatic event.\n\n` +
 `## Evidence and limitations\n\n` +
 `- Source period: ${formatNz(RANGE_START_MS)} through ${formatNz(RANGE_END_MS)}.\n` +
@@ -942,13 +973,28 @@ async function main() {
   const events = eventBuild.events;
   const phaseFamilies = buildPhaseFamilies(events);
   const nowMs = Date.now();
-  const predictions = buildPredictions(quotaClaims, billingAnchors, phaseFamilies, nowMs);
+  const observationLedger = normalizeObservationLedger(JSON.parse(fs.readFileSync(OBSERVATION_LEDGER_PATH, "utf8")));
+  const predictions = buildPredictions(quotaClaims, billingAnchors, phaseFamilies, observationLedger.observations, nowMs);
   const guidance = buildGuidance(predictions, ledger.hourlyRows, nowMs);
+  const timingComparisons = observationLedger.timingComparisons.map(buildTimingComparison);
+  const creditEvidence = buildCreditEvidence([
+    ...observationLedger.creditInventorySnapshots,
+    {
+      id: `latest-probe-${String(ACCOUNT.capturedAt).replace(/\W/g, "")}`,
+      observedAt: ACCOUNT.capturedAt,
+      sourceType: "account-rate-limits-read",
+      sourceLabel: "Codex CLI 0.137.0 live read",
+      status: "not-returned",
+      availableCount: null,
+      credits: [],
+      notesPublic: "The latest probe omitted rateLimitResetCredits. This is unknown, not zero.",
+    },
+  ]);
   const officialTotal = ledger.officialDaily.reduce((sum, row) => sum + row.tokens, 0);
   const localTotal = ledger.officialDaily.reduce((sum, row) => sum + row.localObservedTokens, 0);
 
   const data = {
-    schemaVersion: 2,
+    schemaVersion: 3,
     generatedAt: nzIso(nowMs),
     timezone: "Pacific/Auckland",
     account: {
@@ -985,11 +1031,16 @@ async function main() {
     claims: schedule.claims,
     quotaClaims,
     events,
+    resetObservations: observationLedger.observations,
+    timingComparisons,
+    creditEvidence,
     ignoredModelOnlyHandoffs: eventBuild.ignoredModelOnlyHandoffs,
     predictionRules: {
       billingCycleDay: 14,
       phaseContinuationsCrossBillingBoundary: false,
       retainedClaimsMustStartInCurrentBillingCycle: true,
+      laterResetAutomaticallySupersedesEarlierPhase: false,
+      manualPhasePersistenceWeight: 0.5,
     },
     phaseFamilies,
     billingAnchors,

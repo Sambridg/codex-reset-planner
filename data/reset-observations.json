@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "timezone": "Pacific/Auckland",
+  "observations": [
+    {
+      "id": "manual-probable-2026-07-16-165431",
+      "eventType": "manual-reset-action",
+      "lane": "main",
+      "occurredAt": "2026-07-16T16:54:31+12:00",
+      "recordedAt": "2026-07-23T16:30:00+12:00",
+      "advertisedNextResetAt": "2026-07-23T16:54:31+12:00",
+      "certainty": "probable-retrospective",
+      "confidence": 0.8,
+      "sourceType": "user-retrospective-recollection",
+      "sourceLabel": "User recalls two manual resets roughly one to two days apart; this action aligns with a 42,730-snapshot schedule claim.",
+      "phasePersistenceStatus": "open-test",
+      "notesPublic": "The reset action is probable, not independently confirmed. Whether its seven-day phase survives later resets is the experiment."
+    },
+    {
+      "id": "manual-probable-2026-07-18-152623",
+      "eventType": "manual-reset-action",
+      "lane": "main",
+      "occurredAt": "2026-07-18T15:26:23+12:00",
+      "recordedAt": "2026-07-23T16:30:00+12:00",
+      "advertisedNextResetAt": "2026-07-25T15:26:23+12:00",
+      "certainty": "probable-retrospective",
+      "confidence": 0.8,
+      "sourceType": "user-retrospective-recollection",
+      "sourceLabel": "User recalls a second manual reset soon after the first; this action aligns with a 4,970-snapshot schedule claim.",
+      "phasePersistenceStatus": "open-test",
+      "notesPublic": "The reset action is probable, not independently confirmed. The July 25 deadline remains a parallel-phase test, not a promise."
+    },
+    {
+      "id": "window-observed-2026-07-22-091923",
+      "eventType": "reset-window-start",
+      "lane": "main",
+      "occurredAt": "2026-07-22T09:19:23+12:00",
+      "recordedAt": "2026-07-22T10:40:38+12:00",
+      "advertisedNextResetAt": "2026-07-29T09:19:23+12:00",
+      "certainty": "backend-observed",
+      "confidence": 0.99,
+      "sourceType": "account-rate-limits-read",
+      "sourceLabel": "The live backend exposed a seven-day main window ending 29 July 09:19:23 NZ, fixing its start at this instant.",
+      "phasePersistenceStatus": "backend-current",
+      "notesPublic": "This establishes the window transition and next deadline. It does not by itself identify the trigger."
+    }
+  ],
+  "timingComparisons": [
+    {
+      "id": "timezone-date-label-2026-07-22",
+      "referenceLabel": "UTC representation of the observed July 22 reset",
+      "advertisedAt": "2026-07-21T21:19:23Z",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "same-instant-timezone-date-shift",
+      "notesPublic": "These are the same instant. UTC says July 21 while Pacific/Auckland says July 22."
+    },
+    {
+      "id": "claim-v-actual-2026-07-22-083533",
+      "referenceLabel": "9,942-snapshot advertised deadline",
+      "advertisedAt": "2026-07-22T08:35:33+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "real-delay-or-observation-lag",
+      "notesPublic": "The observed window start was 43 minutes 50 seconds later. Timezone conversion cannot explain this difference."
+    },
+    {
+      "id": "claim-v-actual-2026-07-21-215739",
+      "referenceLabel": "530-snapshot advertised deadline",
+      "advertisedAt": "2026-07-21T21:57:39+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "real-delay-or-competing-clock",
+      "notesPublic": "The observed window start was 11 hours 21 minutes 44 seconds later."
+    },
+    {
+      "id": "billing-anchor-v-actual-2026-07-21",
+      "referenceLabel": "14th-based billing-week anchor",
+      "advertisedAt": "2026-07-21T05:34:00+12:00",
+      "observedAt": "2026-07-22T09:19:23+12:00",
+      "classification": "hypothesis-offset",
+      "notesPublic": "The observed window start was 27 hours 45 minutes 23 seconds later, so timezone alone does not align this anchor."
+    }
+  ],
+  "creditInventorySnapshots": [
+    {
+      "id": "credit-inventory-2026-07-22-104038",
+      "observedAt": "2026-07-22T10:40:38+12:00",
+      "sourceType": "account-rate-limits-read",
+      "sourceLabel": "Structured Codex app-server response",
+      "status": "returned",
+      "availableCount": 2,
+      "credits": [
+        {
+          "resetType": "codexRateLimits",
+          "status": "available",
+          "grantedAt": "2026-07-02T07:03:09+12:00",
+          "expiresAt": "2026-08-01T07:03:09+12:00",
+          "title": "Full reset",
+          "grantReason": "not-exposed"
+        },
+        {
+          "resetType": "codexRateLimits",
+          "status": "available",
+          "grantedAt": "2026-07-14T05:34:00+12:00",
+          "expiresAt": "2026-08-13T05:34:00+12:00",
+          "title": "Full reset",
+          "grantReason": "not-exposed"
+        }
+      ],
+      "notesPublic": "This is the only recovered structured inventory snapshot. It proves two credits were available then, but not why they were granted."
+    }
+  ]
+}

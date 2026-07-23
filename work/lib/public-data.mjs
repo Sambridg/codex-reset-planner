@@ -32,5 +32,23 @@ export function sanitizePublicData(input) {
     }
     return copy;
   });
+
+  data.resetObservations = (data.resetObservations || []).map((observation) => {
+    const copy = { ...observation };
+    delete copy.notesPrivate;
+    delete copy.sourceSession;
+    delete copy.sourcePath;
+    return copy;
+  });
+
+  if (data.creditEvidence?.inventorySnapshots) {
+    data.creditEvidence.inventorySnapshots = data.creditEvidence.inventorySnapshots.map((snapshot) => {
+      const copy = { ...snapshot };
+      delete copy.raw;
+      delete copy.sourceSession;
+      delete copy.sourcePath;
+      return copy;
+    });
+  }
   return data;
 }

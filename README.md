@@ -2,7 +2,7 @@
 
 An unofficial, evidence-ranked timeline and scenario planner for investigating Codex weekly usage windows.
 
-The app combines official daily usage totals with local rollout telemetry, advertised reset deadlines, inferred quota-lane transitions, billing-cycle hypotheses, and manual scenario controls. It is designed to distinguish observed facts from competing reset theories.
+The app combines official daily usage totals with local rollout telemetry, advertised reset deadlines, inferred quota-lane transitions, billing-cycle hypotheses, exact reset observations, reset-credit provenance, and manual scenario controls. It is designed to distinguish observed facts from competing reset theories.
 
 ## Reset identity rule
 
@@ -28,6 +28,8 @@ GitHub Pages serves the sanitized static app from `docs/`:
 - `work/build-reset-forensics.mjs`: local evidence extraction and reset reconstruction.
 - `work/build-reset-planner.mjs`: standalone dashboard generator.
 - `work/probe-codex-account-latest.mjs`: read-only current-account probe for a local Codex app-server.
+- `work/record-reset-observation.mjs`: exact prospective reset-event recorder.
+- `data/reset-observations.json`: tracked public reset, timing, and credit evidence.
 
 ## Build
 
@@ -47,7 +49,15 @@ Run the dependency-free regression suite with:
 npm test
 ```
 
-The tests cover Pacific/Auckland daylight-saving transitions, quota-lane identity, model-only handoff rejection, and public-data sanitization.
+Record a manual reset at the moment it is performed:
+
+```powershell
+npm run record:reset -- --type manual-reset-action --at now --next-reset "2026-07-30T09:19:23+12:00" --used-before 73 --credits-before 2
+```
+
+The dashboard also has a browser-local recorder in the Timing log tab. Export those entries before clearing browser storage; the static public app cannot write directly back to the repository.
+
+The tests cover Pacific/Auckland daylight-saving transitions, quota-lane identity, model-only handoff rejection, parallel manual-phase candidates, timing deltas, credit-field ambiguity, and public-data sanitization.
 
 The account probe uses the locally installed Codex CLI. Set `CODEX_EXECUTABLE` only when an alternate installation should be used; the probe never downloads a package automatically.
 
@@ -62,4 +72,6 @@ The published dataset contains aggregate counts and confidence-ranked signals. R
 - Daily account totals and raw local token telemetry are different accounting surfaces.
 - Hourly dashboard-token values are normalized estimates, not an official hourly ledger.
 - Billing-cycle re-synchronization remains a hypothesis.
+- A later reset does not automatically delete an earlier phase candidate. Parallel weekly persistence is displayed as an experiment until observed.
+- The latest CLI can omit reset-credit inventory; omission is treated as unknown, not zero.
 - This project is not affiliated with or endorsed by OpenAI.
